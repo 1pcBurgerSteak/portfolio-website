@@ -1,0 +1,82 @@
+:root {
+    --bg: #ffffff;
+    --text: #1a1a1a;
+    --accent: #2563eb;
+    --light-gray: #f4f4f5;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background: var(--bg);
+    margin: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Hero Side-by-Side */
+.hero {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.hero-image img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%; /* Makes your photo a circle */
+    object-fit: cover;
+    background: var(--light-gray);
+}
+
+.hero-text h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+.subtitle { font-size: 1.2rem; color: var(--accent); font-weight: bold; }
+
+/* Project List Layout */
+.project-row {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 4rem;
+    align-items: flex-start;
+}
+
+.project-img-box {
+    flex: 0 0 300px; /* Fixed width for the image */
+}
+
+.project-img-box img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.project-info h3 { margin-top: 0; font-size: 1.5rem; }
+.genre { font-weight: bold; color: #666; font-size: 0.9rem; margin-bottom: 0.5rem; }
+.desc { font-size: 1rem; color: #444; }
+
+/* Info Columns */
+.info-footer {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #eee;
+    padding-top: 3rem;
+    margin-top: 2rem;
+}
+
+.info-column { flex: 1; }
+.info-column h3 { color: var(--accent); font-size: 1.1rem; }
+
+/* Mobile View */
+@media (max-width: 768px) {
+    .hero, .project-row, .info-footer {
+        flex-direction: column;
+        text-align: center;
+    }
+    .project-img-box { flex: 0 0 auto; width: 100%; }
+}
