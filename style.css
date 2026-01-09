@@ -1,82 +1,284 @@
 :root {
-    --bg: #ffffff;
-    --text: #1a1a1a;
+    --sidebar-bg: #111827;
+    --main-bg: #ffffff;
     --accent: #2563eb;
-    --light-gray: #f4f4f5;
+    --text-light: #f3f4f6;
+    --text-dark: #1f2937;
+    --gray: #6b7280;
 }
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: var(--text);
-    background: var(--bg);
-    margin: 0;
+/* FONT UPDATED TO INTER */
+body, html { 
+    margin: 0; 
+    padding: 0; 
+    font-family: 'Inter', sans-serif; 
+    overflow-x: hidden; 
 }
 
-.container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 2rem;
+.portfolio-wrapper { display: flex; height: 100vh; }
+
+/* Sidebar */
+.sidebar {
+    width: 320px;
+    background: var(--sidebar-bg);
+    color: var(--text-light);
+    padding: 2.5rem;
+    overflow-y: auto;
+    flex-shrink: 0;
 }
 
-/* Hero Side-by-Side */
-.hero {
-    display: flex;
-    align-items: center;
-    gap: 3rem;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-}
+.profile-img { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem; border: 2px solid var(--accent); }
 
-.hero-image img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%; /* Makes your photo a circle */
-    object-fit: cover;
-    background: var(--light-gray);
-}
+/* BOLD HEADERS */
+.sidebar h1 { font-size: 1.4rem; margin-bottom: 0.2rem; font-weight: 700; letter-spacing: -0.01em; }
+.tagline { color: var(--accent); font-weight: 700; margin-bottom: 1.5rem; font-size: 0.9rem; }
+.bio { font-size: 0.85rem; color: #ffffff; margin-bottom: 2rem; }
 
-.hero-text h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-.subtitle { font-size: 1.2rem; color: var(--accent); font-weight: bold; }
+.sidebar-block { margin-top: 2rem; }
+.sidebar-block h3 { font-size: 0.9rem; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; border-bottom: 1px solid #374151; padding-bottom: 4px; font-weight: 700; }
+.sidebar-block p { font-size: 0.85rem; line-height: 1.4; color: #d1d5db; }
 
-/* Project List Layout */
-.project-row {
+/* Main Content */
+.main-content { flex-grow: 1; padding: 3rem; overflow-y: auto; background: var(--main-bg); }
+.section-title { font-size: 2rem; margin-bottom: 3rem; border-bottom: 2px solid var(--accent); display: inline-block; font-weight: 800; }
+
+.project-card {
     display: flex;
     gap: 2rem;
-    margin-bottom: 4rem;
+    margin-bottom: 5rem;
     align-items: flex-start;
 }
 
-.project-img-box {
-    flex: 0 0 300px; /* Fixed width for the image */
+.project-gallery { flex: 0 0 400px; position: relative; }
+.slider { width: 100%; height: 250px; background: #000; border-radius: 8px; overflow: hidden; }
+.slide { display: none; width: 100%; height: 100%; object-fit: contain; }
+.slide.active { display: block; }
+
+.slider-controls { margin-top: 10px; display: flex; gap: 10px; }
+.slider-controls button { flex: 1; padding: 8px; cursor: pointer; background: #eee; border: 1px solid #ddd; border-radius: 4px; font-weight: 600; font-family: 'Inter', sans-serif; }
+
+.project-info { flex: 1; }
+.project-info h3 { margin-top: 0; font-size: 1.6rem; font-weight: 700; }
+.genre { font-weight: 700; color: var(--accent); margin-bottom: 5px; }
+.award { font-style: italic; color: #059669; font-size: 0.9rem; margin-bottom: 10px; font-weight: 600; }
+.desc { font-size: 0.95rem; color: var(--text-dark); line-height: 1.6; margin-bottom: 1.5rem; }
+
+/* Link Styles */
+.itch-link { margin-top: 10px; font-weight: 600; }
+.itch-link a { color: var(--accent); text-decoration: none; }
+.itch-link a:hover { text-decoration: underline; }
+
+/* Mobile */
+@media (max-width: 1024px) {
+    .portfolio-wrapper { flex-direction: column; height: auto; }
+    .sidebar { width: 100%; height: auto; position: static; }
+    .main-content { padding: 1.5rem; }
+    .project-card { flex-direction: column; margin-bottom: 3rem; }
+    .project-gallery { width: 100%; flex: none; }
 }
 
-.project-img-box img {
-    width: 100%;
-    border-radius: 8px;
+:root {
+    --sidebar-bg: #0f172a; /* Slightly deeper navy for better contrast */
+    --main-bg: #ffffff;
+    --accent: #3b82f6; /* Brighter professional blue */
+    --text-light: #f8fafc;
+    --text-dark: #1e293b;
+    --gray: #64748b;
+    /* Font Variables */
+    --font-header: 'Montserrat', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+    --font-mono: 'Source Code Pro', monospace;
 }
 
-.project-info h3 { margin-top: 0; font-size: 1.5rem; }
-.genre { font-weight: bold; color: #666; font-size: 0.9rem; margin-bottom: 0.5rem; }
-.desc { font-size: 1rem; color: #444; }
+body, html { 
+    margin: 0; 
+    padding: 0; 
+    font-family: var(--font-body); 
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden; 
+}
 
-/* Info Columns */
-.info-footer {
+.portfolio-wrapper { display: flex; height: 100vh; }
+
+/* Sidebar Styling */
+.sidebar {
+    width: 320px;
+    background: var(--sidebar-bg);
+    color: var(--text-light);
+    padding: 2.5rem;
+    overflow-y: auto;
+    flex-shrink: 0;
+}
+
+.profile-img { 
+    width: 110px; 
+    height: 110px; 
+    border-radius: 12px; /* Soft square look is more modern than circle */
+    object-fit: cover; 
+    margin-bottom: 1.5rem; 
+    border: 3px solid var(--accent); 
+}
+
+.sidebar h1 { 
+    font-family: var(--font-header);
+    font-size: 1.5rem; 
+    margin-bottom: 0.2rem; 
+    font-weight: 800; 
+    letter-spacing: -0.02em; 
+}
+
+.tagline { 
+    font-family: var(--font-mono); /* Monospace gives a "programmer" vibe */
+    color: var(--accent); 
+    font-weight: 600; 
+    margin-bottom: 1.5rem; 
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+
+.bio { font-size: 0.9rem; color: #ffffff; margin-bottom: 2rem; }
+
+.sidebar-block h3 { 
+    font-family: var(--font-header);
+    font-size: 0.85rem; 
+    text-transform: uppercase; 
+    color: var(--accent); 
+    margin-bottom: 0.75rem; 
+    border-bottom: 1px solid #1e293b; 
+    padding-bottom: 6px; 
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+.sidebar-block p { 
+    font-size: 0.85rem; 
+    margin-bottom: 0.5rem;
+    color: #cbd5e1; 
+}
+
+/* Main Content Styling */
+.main-content { flex-grow: 1; padding: 4rem; overflow-y: auto; background: var(--main-bg); }
+
+.section-title { 
+    font-family: var(--font-header);
+    font-size: 2.5rem; 
+    margin-bottom: 4rem; 
+    font-weight: 800; 
+    letter-spacing: -0.03em;
+    color: var(--text-dark);
+}
+
+.project-card {
     display: flex;
-    justify-content: space-between;
-    border-top: 1px solid #eee;
-    padding-top: 3rem;
-    margin-top: 2rem;
+    gap: 3rem;
+    margin-bottom: 6rem;
+    align-items: flex-start;
 }
 
-.info-column { flex: 1; }
-.info-column h3 { color: var(--accent); font-size: 1.1rem; }
+.project-info h3 { 
+    font-family: var(--font-header);
+    margin-top: 0; 
+    font-size: 1.8rem; 
+    font-weight: 700; 
+    color: #0f172a;
+}
 
-/* Mobile View */
-@media (max-width: 768px) {
-    .hero, .project-row, .info-footer {
-        flex-direction: column;
-        text-align: center;
-    }
-    .project-img-box { flex: 0 0 auto; width: 100%; }
+.genre { 
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 600; 
+    color: var(--accent); 
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.award { 
+    background: #ecfdf5;
+    color: #065f46;
+    padding: 4px 12px;
+    border-radius: 4px;
+    display: inline-block;
+    font-size: 0.85rem; 
+    margin-bottom: 15px; 
+    font-weight: 600; 
+}
+
+.desc { 
+    font-size: 1rem; 
+    color: #475569; 
+    line-height: 1.7; 
+}
+
+.desc strong {
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+/* Technical Details Links */
+.itch-link { 
+    margin-top: 15px; 
+    font-family: var(--font-mono); 
+    font-size: 0.85rem; 
+}
+
+.slider-controls button { 
+    font-family: var(--font-header);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    transition: all 0.2s ease;
+}
+
+.slider-controls button:hover {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+
+/* Lightbox Styles */
+.lightbox {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Dark background */
+    justify-content: center;
+    align-items: center;
+    cursor: zoom-out;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox.active img {
+    transform: scale(1);
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Update your existing .slide class to show it's clickable */
+.slide {
+    cursor: zoom-in;
 }

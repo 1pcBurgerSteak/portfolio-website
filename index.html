@@ -4,98 +4,163 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ivan Tesorero | Game Programmer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Source+Code+Pro:wght@400;600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header class="hero container">
-        <div class="hero-image">
-            <img src="Image\Tesorero_Ivan.jpg" alt="Ivan L. Tesorero">
-        </div>
-        <div class="hero-text">
-            <h1>Ivan L. Tesorero</h1>
-            <p class="subtitle">Game Programmer</p>
-            <p>Passionate about creating games that offer fun and meaningful player experiences.</p>
-        </div>
-    </header>
-
-    <section class="container">
-        <h2 class="section-title">Featured Projects</h2>
-
-        <div class="project-row">
-            <div class="project-img-box">
-                <img src="Image/xwnWfT.png" alt="Saldang">
+    <div class="portfolio-wrapper">
+        <aside class="sidebar">
+            <div class="profile-section">
+                <img src="Image/Tesorero_Ivan.jpg" alt="Ivan L. Tesorero" class="profile-img">
+                <h1>Ivan L. Tesorero</h1> 
+                <p class="tagline">Game Programmer</p> 
+                <p class="bio">Passionate about creating games that offer <strong>fun</strong> and <strong>meaningful</strong> player experiences.</p>
             </div>
-            <div class="project-info">
-                <h3>Saldang</h3>
-                <p class="genre">2D Action Roguelike</p>
-                <p class="desc">Award-winning project from the Bicol Myth Game Jam (November 2025).</p>
-                <p class="desc">I made the core gameplay systems and combat mechanics using C# and Unity.
-                    Developed the high-volume enemy spawning logic and wave management systems. 
-                    I also implemented a modular power-up system to create a "vampire-survivor" style progression loop.
-                </p>
-                
-            </div>
-        </div>
 
-        <div class="project-row">
-            <div class="project-img-box">
-                <img src="Image/MR. KUPIDO.png.jpeg" alt="Mr. Kupido">
+            <div class="contact-info">
+                <h3>Contact</h3>
+                <p>📍 Calsada St. Mabolo, Naga City</p>
+                <p>📧 <a href="mailto:ivantesorero0@gmail.com">ivantesorero0@gmail.com</a></p>
+                <p>📞 +09937635110</p>
             </div>
-            <div class="project-info">
-                <h3>Mr. Kupido</h3>
-                <p class="genre">2D Casual, Puzzle</p>
-                <p class="desc">Top 19 Semi-Finalist for the Young Creatives Challenge (YCC2). The theme</p>
-                <p class="desc">I programmed the core puzzle logic and interactive mechanics for this casual title.
-                    I also made the random NPC generation system for the puzzle mechanics
-                </p>
-            </div>
-        </div>
 
-        <div class="project-row">
-            <div class="project-img-box">
-                <img src="Image/plastic cup.png" alt="Sort-It-Out">
+            <div class="sidebar-block">
+                <h3>Technical Skills</h3>
+                <p><strong>Languages:</strong> C#, C++, Java</p>
+                <p><strong>Tools:</strong> Unity, GitHub, Maya, Adobe Products, Visual Studio</p>
             </div>
-            <div class="project-info">
-                <h3>Sort-It-Out</h3>
-                <p class="genre">3D Survival, Exploration</p>
-                <p class="desc">Developed as a Capstone Project.</p>
-                <p class="desc">This game is made for teaching people about proper waste management
-                    and effects of improper waste disposal on the environment through our trash sorting mechanics
-                    and survival management mechanics.
-                </p>
 
-                <p class="desc">I implemented the core gameplay systems including the waste sorting mechanics,
-                    survival management systems, and exploration mechanics using C# and Unity.
+            <div class="sidebar-block">
+                <h3>Education</h3>
+                <p><strong>BS in Entertainment Multimedia Computing</strong></p>
+                <p>Major in Game Development</p>
+                <p>Bicol State College of Applied Science Technology</p>
             </div>
-        </div>
+        </aside>
 
-        <div class="project-row">
-            <div class="project-img-box">
-                <img src="Image/Chrage.png" alt="Dragon Gears">
+        <main class="main-content">
+            <h2 class="section-title">Featured Projects</h2>
+
+            <div class="project-card">
+                <div class="project-gallery">
+                    <div class="slider" id="slider-saldang">
+                        <img src="Image/xwnWfT.png" class="slide active" alt="Saldang Gameplay">
+                        <img src="Image/saldang (1).jpg" class="slide" alt="Saldang Gameplay">
+                        <img src="Image/saldang (2).jpg" class="slide" alt="Saldang Gameplay">
+                        <img src="Image/saldang (3).jpg" class="slide" alt="Saldang Gameplay">
+                        <img src="Image/saldang (4).jpg" class="slide" alt="Saldang Gameplay">
+                    </div>
+                    <div class="slider-controls">
+                        <button onclick="moveSlide('slider-saldang', -1)">Prev</button>
+                        <button onclick="moveSlide('slider-saldang', 1)">Next</button>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Saldang</h3> 
+                    <p class="genre">2D Action Roguelike</p>
+                    <p class="award">Won 2nd Place in Bicol Myth Game Jam (November 2025)</p>
+                    <p class="desc">I made the <strong>main gameplay systems</strong> and <strong>combat mechanics</strong> using C# and Unity. Developed the high-volume enemy spawning logic and wave management systems. The game has a "vampire-survivor" like style progression loop.</p>
+                    <p class="itch-link">itch.io: <a href="https://itch.io/jam/-mythic-bicol-game-jam-2025/rate/4003600" target="_blank">https://itch.io/saldang</a></p>
+                </div>
             </div>
-            <div class="project-info">
-                <h3>Dragon Gears</h3>
-                <p class="genre">2D Shooter</p>
-                <p class="desc">A hardcore 2D shooter game with precision platforming and hard bosses.</p>
-                <p class="desc">A solo project of mine. I developed the core gameplay systems including
-                    player movement, shooting mechanics, enemy AI, and Boss design.
+
+            <div class="project-card">
+                <div class="project-gallery">
+                    <div class="slider" id="slider-kupido">
+                        <img src="Image/MR. KUPIDO.png.jpeg" class="slide active" alt="Mr. Kupido Gameplay">
+                        <img src="Image/kupido (1).png" class="slide" alt="Mr. Kupido Gameplay">
+                        <img src="Image/kupido (2).png" class="slide" alt="Mr. Kupido Gameplay">
+                        <img src="Image/kupido (3).png" class="slide" alt="Mr. Kupido Gameplay">
+                        <img src="Image/kupido (4).png" class="slide" alt="Mr. Kupido Gameplay">
+                    </div>
+                    <div class="slider-controls">
+                        <button onclick="moveSlide('slider-kupido', -1)">Prev</button>
+                        <button onclick="moveSlide('slider-kupido', 1)">Next</button>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Mr. Kupido</h3> 
+                    <p class="genre">2D Casual, Puzzle</p>
+                    <p class="award">Top 19 Semi-Finalist for the Young Creatives Challenge (YCC2)</p>
+                    <p class="desc">Its a prototype game our classmates made. I <strong>programmed</strong> most of the gameplay interactive mechanics and I also made the <strong>random NPC generation system</strong> for the puzzle mechanics.</p>
+                </div>
             </div>
-        </div>
-    </section>
 
-    <section class="info-footer container">
-        <div class="info-column">
-            <h3>Technical Skills</h3>
-            <p><strong>Languages:</strong> C#, C++, Java</p>
-            <p><strong>Tools:</strong> Unity, GitHub, Maya, Visual Studio</p>
-        </div>
-        <div class="info-column">
-            <h3>Education</h3>
-            <p><strong>BS in Entertainment Multimedia Computing</strong></p>
-            <p>Bicol State College of Applied Science Technology</p>
-        </div>
-    </section>
+            <div class="project-card">
+                <div class="project-gallery">
+                    <div class="slider" id="slider-sort">
+                        <img src="Image/plastic cup.png" class="slide active" alt="Sort-It-Out">
+                        <img src="Image/capstone (1).jpg" class="slide" alt="Sort-It-Out">
+                        <img src="Image/capstone (2).jpg" class="slide" alt="Sort-It-Out">
+                        <img src="Image/capstone (3).jpg" class="slide" alt="Sort-It-Out">
+                        <img src="Image/capstone (4).jpg" class="slide" alt="Sort-It-Out">
+                        <img src="Image/capstone (5).jpg" class="slide" alt="Sort-It-Out">
+                    </div>
+                    <div class="slider-controls">
+                        <button onclick="moveSlide('slider-sort', -1)">Prev</button>
+                        <button onclick="moveSlide('slider-sort', 1)">Next</button>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Sort-It-Out</h3> 
+                    <p class="genre">3D Survival, Exploration</p>
+                    <p class="desc">Developed for <strong>CAPSTONE Project</strong>. This game teaches proper <strong>waste management</strong> through trash sorting and survival mechanics. I implemented the core systems including waste sorting, survival management, and exploration using C# and Unity.</p>
+                </div>
+            </div>
 
+            <div class="project-card">
+                <div class="project-gallery">
+                    <div class="slider" id="slider-dragon">
+                        <img src="Image/Chrage.png" class="slide active" alt="Dragon Gears">
+                        <img src="Image/dragon (1).png" class="slide" alt="Dragon Gears">
+                        <img src="Image/dragon (2).png" class="slide" alt="Dragon Gears">
+                        <img src="Image/dragon (3).png" class="slide" alt="Dragon Gears">
+                        <img src="Image/dragon (4).png" class="slide" alt="Dragon Gears">
+                        <img src="Image/dragon (5).png" class="slide" alt="Dragon Gears">
+                    </div>
+                    <div class="slider-controls">
+                        <button onclick="moveSlide('slider-dragon', -1)">Prev</button>
+                        <button onclick="moveSlide('slider-dragon', 1)">Next</button>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Dragon Gears</h3> 
+                    <p class="genre">2D Platformer, Shooter</p>
+                    <p class="desc">A hard shooter platformer game its a <strong>solo project</strong> featuring precision platforming and <strong>difficult bosses</strong>. I developed the game systems including player movement, shooting mechanics, enemy AI, and Boss design.</p>
+                    <p class="itch-link">itch.io: <a href="https://1pcburgersteak.itch.io/dragon-gears" target="_blank">https://itch.io/dragongears</a></p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-gallery">
+                    <div class="slider" id="slider-bolz">
+                        <img src="image/Bolz MiniGame Poster.jpg" class="slide active" alt="Bolz">
+                        <img src="image/Bolz (4).png" class="slide" alt="Bolz">
+                        <img src="image/Bolz (3).png" class="slide" alt="Bolz">
+                        <img src="image/Bolz (2).png" class="slide" alt="Bolz">
+                        <img src="image/Bolz (1).png" class="slide" alt="Bolz">
+                    </div>
+                    <div class="slider-controls">
+                        <button onclick="moveSlide('slider-bolz', -1)">Prev</button>
+                        <button onclick="moveSlide('slider-bolz', 1)">Next</button>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Bolz</h3> 
+                    <p class="genre">Casual, Arcade</p>
+                    <p class="desc">A <strong>solo developed</strong> game. It is a simple brick breaking game but I added an <strong>upgrade system</strong> and the bricks fall down instead, which makes the game more engaging.</p>
+                    <p class="itch-link">itch.io: <a href="https://1pcburgersteak.itch.io/bolz" target="_blank">https://itch.io/bolz</a></p>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="close-btn">&times;</span>
+    <img id="lightbox-img" src="" alt="Enlarged View">
+</div>
 </body>
 </html>
