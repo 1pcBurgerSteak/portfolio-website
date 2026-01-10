@@ -8,6 +8,15 @@
     --border-color: #e2e8f0;
 }
 
+.main-content { 
+    flex-grow: 1; 
+    padding: 3rem; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; /* This centers the grid horizontally */
+    background-color: var(--main-bg);
+}
+
 body, html { margin: 0; padding: 0; font-family: 'Open Sans', sans-serif; background: var(--main-bg); color: var(--text-dark); }
 
 .portfolio-wrapper { display: flex; min-height: 100vh; }
