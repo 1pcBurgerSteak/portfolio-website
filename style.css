@@ -1,164 +1,164 @@
+/* --- Global Variables & Theme --- */
 :root {
-    --sidebar-bg: #111827;
+    --sidebar-bg: #0f172a;
     --main-bg: #ffffff;
-    --accent: #2563eb;
-    --text-light: #f3f4f6;
-    --text-dark: #1f2937;
-    --gray: #6b7280;
-}
-
-/* FONT UPDATED TO INTER */
-body, html { 
-    margin: 0; 
-    padding: 0; 
-    font-family: 'Inter', sans-serif; 
-    overflow-x: hidden; 
-}
-
-.portfolio-wrapper { display: flex; height: 100vh; }
-
-/* Sidebar */
-.sidebar {
-    width: 320px;
-    background: var(--sidebar-bg);
-    color: var(--text-light);
-    padding: 2.5rem;
-    overflow-y: auto;
-    flex-shrink: 0;
-}
-
-.profile-img { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem; border: 2px solid var(--accent); }
-
-/* BOLD HEADERS */
-.sidebar h1 { font-size: 1.4rem; margin-bottom: 0.2rem; font-weight: 700; letter-spacing: -0.01em; }
-.tagline { color: var(--accent); font-weight: 700; margin-bottom: 1.5rem; font-size: 0.9rem; }
-.bio { font-size: 0.85rem; color: #ffffff; margin-bottom: 2rem; }
-
-.sidebar-block { margin-top: 2rem; }
-.sidebar-block h3 { font-size: 0.9rem; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; border-bottom: 1px solid #374151; padding-bottom: 4px; font-weight: 700; }
-.sidebar-block p { font-size: 0.85rem; line-height: 1.4; color: #d1d5db; }
-
-/* Main Content */
-.main-content { flex-grow: 1; padding: 3rem; overflow-y: auto; background: var(--main-bg); }
-.section-title { font-size: 2rem; margin-bottom: 3rem; border-bottom: 2px solid var(--accent); display: inline-block; font-weight: 800; }
-
-.project-card {
-    display: flex;
-    gap: 2rem;
-    margin-bottom: 5rem;
-    align-items: flex-start;
-}
-
-.project-gallery { flex: 0 0 400px; position: relative; }
-.slider { width: 100%; height: 250px; background: #000; border-radius: 8px; overflow: hidden; }
-.slide { display: none; width: 100%; height: 100%; object-fit: contain; }
-.slide.active { display: block; }
-
-.slider-controls { margin-top: 10px; display: flex; gap: 10px; }
-.slider-controls button { flex: 1; padding: 8px; cursor: pointer; background: #eee; border: 1px solid #ddd; border-radius: 4px; font-weight: 600; font-family: 'Inter', sans-serif; }
-
-.project-info { flex: 1; }
-.project-info h3 { margin-top: 0; font-size: 1.6rem; font-weight: 700; }
-.genre { font-weight: 700; color: var(--accent); margin-bottom: 5px; }
-.award { font-style: italic; color: #059669; font-size: 0.9rem; margin-bottom: 10px; font-weight: 600; }
-.desc { font-size: 0.95rem; color: var(--text-dark); line-height: 1.6; margin-bottom: 1.5rem; }
-
-/* Link Styles */
-.itch-link { margin-top: 10px; font-weight: 600; }
-.itch-link a { color: var(--accent); text-decoration: none; }
-.itch-link a:hover { text-decoration: underline; }
-
-/* Mobile */
-@media (max-width: 1024px) {
-    .portfolio-wrapper { flex-direction: column; height: auto; }
-    .sidebar { width: 100%; height: auto; position: static; }
-    .main-content { padding: 1.5rem; }
-    .project-card { flex-direction: column; margin-bottom: 3rem; }
-    .project-gallery { width: 100%; flex: none; }
-}
-
-:root {
-    --sidebar-bg: #0f172a; /* Slightly deeper navy for better contrast */
-    --main-bg: #ffffff;
-    --accent: #3b82f6; /* Brighter professional blue */
+    --accent: #3b82f6; 
     --text-light: #f8fafc;
     --text-dark: #1e293b;
-    --gray: #64748b;
-    /* Font Variables */
+    --gray-text: #475569;
+    --border-color: #e2e8f0;
+    
+    /* Font Families */
     --font-header: 'Montserrat', sans-serif;
     --font-body: 'Open Sans', sans-serif;
     --font-mono: 'Source Code Pro', monospace;
 }
 
+/* --- Base Styles --- */
 body, html { 
     margin: 0; 
     padding: 0; 
     font-family: var(--font-body); 
     color: var(--text-dark);
     line-height: 1.6;
-    overflow-x: hidden; 
+    background-color: var(--main-bg);
+    /* Removed overflow-x: hidden to allow natural scrolling */
 }
 
-.portfolio-wrapper { display: flex; height: 100vh; }
+/* Changed height from 100vh to min-height and removed overflow */
+.portfolio-wrapper { 
+    display: flex; 
+    min-height: 100vh; 
+    align-items: stretch;
+}
 
-/* Sidebar Styling */
+/* --- Sidebar Styling --- */
 .sidebar {
-    width: 320px;
-    background: var(--sidebar-bg);
+    width: 360px; 
+    background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
     color: var(--text-light);
-    padding: 2.5rem;
-    overflow-y: auto;
+    padding: 3rem 2.5rem;
     flex-shrink: 0;
+    border-right: 1px solid rgba(255,255,255,0.1);
+    /* Removed overflow-y: auto so it scrolls with the page */
 }
 
 .profile-img { 
-    width: 110px; 
-    height: 110px; 
-    border-radius: 12px; /* Soft square look is more modern than circle */
+    width: 120px; 
+    height: 120px; 
+    border-radius: 16px; 
     object-fit: cover; 
     margin-bottom: 1.5rem; 
-    border: 3px solid var(--accent); 
+    border: 3px solid var(--accent);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
 }
 
 .sidebar h1 { 
     font-family: var(--font-header);
-    font-size: 1.5rem; 
-    margin-bottom: 0.2rem; 
+    font-size: 1.8rem; 
+    margin-bottom: 0.3rem; 
     font-weight: 800; 
     letter-spacing: -0.02em; 
+    color: #ffffff;
 }
 
 .tagline { 
-    font-family: var(--font-mono); /* Monospace gives a "programmer" vibe */
+    font-family: var(--font-mono);
     color: var(--accent); 
     font-weight: 600; 
     margin-bottom: 1.5rem; 
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     text-transform: uppercase;
 }
 
-.bio { font-size: 0.9rem; color: #ffffff; margin-bottom: 2rem; }
+.bio { 
+    font-size: 0.95rem; 
+    color: #cbd5e1; 
+    margin-bottom: 2rem; 
+}
+
+/* --- Contact & CV Download --- */
+.contact-info h3 {
+    font-family: var(--font-header);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+}
+
+.contact-info p {
+    font-size: 0.9rem;
+    margin-bottom: 0.6rem;
+}
+
+.contact-info a { color: #ffffff; text-decoration: none; transition: color 0.2s; }
+.contact-info a:hover { color: var(--accent); }
+
+.download-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    padding: 12px 20px;
+    background: var(--accent);
+    color: white !important;
+    text-decoration: none !important;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.download-btn:hover {
+    background: #2563eb;
+    transform: translateY(-2px);
+}
+
+/* --- Skill Badges --- */
+.sidebar-block { margin-top: 2.5rem; }
 
 .sidebar-block h3 { 
     font-family: var(--font-header);
     font-size: 0.85rem; 
     text-transform: uppercase; 
     color: var(--accent); 
-    margin-bottom: 0.75rem; 
-    border-bottom: 1px solid #1e293b; 
+    margin-bottom: 1rem; 
+    border-bottom: 1px solid rgba(255,255,255,0.1); 
     padding-bottom: 6px; 
     font-weight: 700;
-    letter-spacing: 0.1em;
 }
 
-.sidebar-block p { 
-    font-size: 0.85rem; 
-    margin-bottom: 0.5rem;
-    color: #cbd5e1; 
+.skill-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
-/* Main Content Styling */
-.main-content { flex-grow: 1; padding: 4rem; overflow-y: auto; background: var(--main-bg); }
+.skill-badge {
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.05);
+}
+
+.unity { color: #4ade80; border-color: #22c55e; background: #22c55e15; }
+.csharp { color: #c084fc; border-color: #a855f7; background: #a855f715; }
+.cpp { color: #60a5fa; border-color: #3b82f6; background: #3b82f615; }
+.vfx { color: #fbbf24; border-color: #f59e0b; background: #f59e0b15; }
+
+/* --- Main Content --- */
+.main-content { 
+    flex-grow: 1; 
+    padding: 4rem; 
+    /* Removed overflow-y: auto so it scrolls with the page */
+}
 
 .section-title { 
     font-family: var(--font-header);
@@ -166,22 +166,72 @@ body, html {
     margin-bottom: 4rem; 
     font-weight: 800; 
     letter-spacing: -0.03em;
-    color: var(--text-dark);
 }
 
+/* --- Project Cards --- */
 .project-card {
     display: flex;
     gap: 3rem;
     margin-bottom: 6rem;
     align-items: flex-start;
+    padding: 2.5rem;
+    background: #f8fafc;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+}
+
+.project-gallery { flex: 0 0 400px; position: relative; }
+
+.slider { 
+    width: 100%; 
+    height: 250px; 
+    background: #000; 
+    border-radius: 12px; 
+    overflow: hidden; 
+}
+
+.slide { 
+    display: none; 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+}
+
+.slide.active { display: block; }
+
+.slider-controls { margin-top: 15px; display: flex; gap: 10px; }
+
+.slider-controls button { 
+    flex: 1; 
+    padding: 10px; 
+    cursor: pointer; 
+    background: #ffffff; 
+    border: 1px solid var(--border-color); 
+    border-radius: 6px; 
+    font-weight: 700;
+    font-family: var(--font-header);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+}
+
+.slider-controls button:hover {
+    background: var(--accent);
+    color: white;
 }
 
 .project-info h3 { 
     font-family: var(--font-header);
     margin-top: 0; 
-    font-size: 1.8rem; 
+    font-size: 2rem; /* Larger project titles */
     font-weight: 700; 
     color: #0f172a;
+    margin-bottom: 0.5rem;
 }
 
 .genre { 
@@ -189,96 +239,53 @@ body, html {
     font-size: 0.8rem;
     font-weight: 600; 
     color: var(--accent); 
-    margin-bottom: 8px;
-    text-transform: uppercase;
+    margin-bottom: 12px;
 }
 
 .award { 
     background: #ecfdf5;
     color: #065f46;
-    padding: 4px 12px;
-    border-radius: 4px;
+    padding: 6px 14px;
+    border-radius: 6px;
     display: inline-block;
     font-size: 0.85rem; 
     margin-bottom: 15px; 
     font-weight: 600; 
+    border: 1px solid #a7f3d0;
 }
 
 .desc { 
     font-size: 1rem; 
-    color: #475569; 
+    color: var(--gray-text); 
     line-height: 1.7; 
 }
 
-.desc strong {
-    color: var(--text-dark);
-    font-weight: 600;
-}
-
-/* Technical Details Links */
-.itch-link { 
-    margin-top: 15px; 
-    font-family: var(--font-mono); 
-    font-size: 0.85rem; 
-}
-
-.slider-controls button { 
-    font-family: var(--font-header);
-    text-transform: uppercase;
-    font-size: 0.75rem;
-    letter-spacing: 0.05em;
-    transition: all 0.2s ease;
-}
-
-.slider-controls button:hover {
-    background: var(--accent);
-    color: white;
-    border-color: var(--accent);
-}
-
-/* Lightbox Styles */
+/* --- Lightbox --- */
 .lightbox {
-    display: none; /* Hidden by default */
+    display: none;
     position: fixed;
-    z-index: 1000;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9); /* Dark background */
+    z-index: 2000;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(15, 23, 42, 0.95);
     justify-content: center;
     align-items: center;
-    cursor: zoom-out;
 }
 
-.lightbox img {
-    max-width: 90%;
-    max-height: 80%;
-    border-radius: 8px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.5);
-    transform: scale(0.9);
-    transition: transform 0.3s ease;
-}
-
-.lightbox.active {
-    display: flex;
-}
-
-.lightbox.active img {
-    transform: scale(1);
-}
+.lightbox.active { display: flex; }
 
 .close-btn {
     position: absolute;
-    top: 20px;
-    right: 30px;
+    top: 20px; right: 30px;
     color: white;
-    font-size: 40px;
-    font-weight: bold;
+    font-size: 2.5rem;
     cursor: pointer;
 }
 
-/* Update your existing .slide class to show it's clickable */
-.slide {
-    cursor: zoom-in;
+/* --- Responsive Layout --- */
+@media (max-width: 1100px) {
+    .portfolio-wrapper { flex-direction: column; }
+    .sidebar { width: 100%; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .project-card { flex-direction: column; padding: 1.5rem; }
+    .project-gallery { width: 100%; flex: none; }
 }
