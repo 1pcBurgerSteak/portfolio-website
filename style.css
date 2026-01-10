@@ -1,310 +1,169 @@
-/* --- Global Variables & Theme --- */
 :root {
     --sidebar-bg: #0f172a;
-    --main-bg: #ffffff;
+    --main-bg: #f8fafc;
     --accent: #3b82f6; 
     --text-light: #f8fafc;
     --text-dark: #1e293b;
-    --gray-text: #475569;
+    --gray-text: #64748b;
     --border-color: #e2e8f0;
-    
-    /* Font Families */
-    --font-header: 'Montserrat', sans-serif;
-    --font-body: 'Open Sans', sans-serif;
-    --font-mono: 'Source Code Pro', monospace;
 }
 
-/* --- Base Styles --- */
-body, html { 
-    margin: 0; 
-    padding: 0; 
-    font-family: var(--font-body); 
-    color: var(--text-dark);
-    line-height: 1.6;
-    background-color: var(--main-bg);
-    /* Removed overflow-x: hidden to allow natural scrolling */
-}
+body, html { margin: 0; padding: 0; font-family: 'Open Sans', sans-serif; background: var(--main-bg); color: var(--text-dark); }
 
-/* Changed height from 100vh to min-height and removed overflow */
-.portfolio-wrapper { 
-    display: flex; 
-    min-height: 100vh; 
-    align-items: stretch;
-}
+.portfolio-wrapper { display: flex; min-height: 100vh; }
 
-/* --- Sidebar Styling --- */
+/* --- Sidebar Organization --- */
 .sidebar {
-    width: 360px; 
-    background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
-    color: var(--text-light);
-    padding: 3rem 2.5rem;
-    flex-shrink: 0;
-    border-right: 1px solid rgba(255,255,255,0.1);
-    /* Removed overflow-y: auto so it scrolls with the page */
+    width: 320px; background: var(--sidebar-bg); color: var(--text-light);
+    padding: 3rem 2rem; flex-shrink: 0; position: sticky; top: 0; height: 100vh;
+    display: flex; flex-direction: column; gap: 2.5rem; /* Adds space between sections */
 }
 
-.profile-img { 
-    width: 120px; 
-    height: 120px; 
-    border-radius: 16px; 
-    object-fit: cover; 
-    margin-bottom: 1.5rem; 
-    border: 3px solid var(--accent);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-}
-
-.sidebar h1 { 
-    font-family: var(--font-header);
-    font-size: 1.8rem; 
-    margin-bottom: 0.3rem; 
-    font-weight: 800; 
-    letter-spacing: -0.02em; 
-    color: #ffffff;
-}
-
-.tagline { 
-    font-family: var(--font-mono);
-    color: var(--accent); 
-    font-weight: 600; 
-    margin-bottom: 1.5rem; 
-    font-size: 0.9rem;
+/* Sidebar Headings (Contact, Achievements, etc) */
+.sidebar h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
     text-transform: uppercase;
-}
-
-.bio { 
-    font-size: 0.95rem; 
-    color: #cbd5e1; 
-    margin-bottom: 2rem; 
-}
-
-/* --- Contact & CV Download --- */
-.contact-info h3 {
-    font-family: var(--font-header);
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    color: var(--accent);
-    letter-spacing: 0.1em;
+    letter-spacing: 1.5px;
+    color: var(--accent); /* Makes headings pop */
     margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 5px;
 }
 
-.contact-info p {
-    font-size: 0.9rem;
-    margin-bottom: 0.6rem;
-}
+.profile-img { width: 110px; height: 100px; border-radius: 12px; border: 3px solid var(--accent); margin-bottom: 1.5rem; }
+.tagline { font-family: 'Source Code Pro', monospace; color: var(--accent); font-weight: 600; margin: 5px 0; }
+.bio { font-size: 0.9rem; line-height: 1.6; color: #cbd5e1; }
 
-.contact-info a { color: #ffffff; text-decoration: none; transition: color 0.2s; }
+/* Contact Links */
+.contact-info p { font-size: 0.85rem; margin: 8px 0; color: #cbd5e1; }
+.contact-info a { color: white; text-decoration: none; font-weight: 600; }
 .contact-info a:hover { color: var(--accent); }
+
+/* Achievements Circle Markers */
+.achievement-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; }
+.achievement-item p { margin: 0; font-size: 0.85rem; line-height: 1.4; color: #cbd5e1; }
+.dot-marker { width: 10px; height: 10px; border-radius: 50%; margin-top: 5px; flex-shrink: 0; }
+.dot-marker.gold { background: #fbbf24; box-shadow: 0 0 8px rgba(251, 191, 36, 0.5); }
+.dot-marker.blue { background: #3b82f6; box-shadow: 0 0 8px rgba(59, 130, 246, 0.5); }
+
+/* Technical Skills */
+.skill-container { display: flex; flex-wrap: wrap; gap: 8px; }
+.skill-badge { 
+    padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; 
+    font-family: 'Source Code Pro', monospace; font-weight: bold;
+    background: rgba(255,255,255,0.05); 
+}
+
+/* Restored Skill Colors */
+.unity { color: #4ade80; border: 1px solid #22c55e; }
+.csharp { color: #c084fc; border: 1px solid #a855f7; }
+.cpp { color: #60a5fa; border: 1px solid #3b82f6; }
+.vfx { color: #fbbf24; border: 1px solid #f59e0b; }
+.tools { color: #94a3b8; border: 1px solid #475569; }
+
+/* --- Main Content Grid --- */
+.main-content { flex-grow: 1; padding: 3rem; }
+.section-title { font-family: 'Montserrat', sans-serif; font-size: 2rem; margin-bottom: 2rem; }
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+    max-width: 1100px;
+}
+
+.project-card {
+    background: white; border-radius: 16px; border: 1px solid var(--border-color);
+    overflow: hidden; height: 100%; display: flex; flex-direction: column;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+}
+
+.slider { width: 100%; height: 250px; background: #000; position: relative; }
+.slide { width: 100%; height: 100%; object-fit: contain; display: none; }
+.slide.active { display: block; }
+
+/* Genre Badge styling (Matches Technical Skills) */
+.genre-badge {
+    display: inline-block;
+    padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; 
+    font-family: 'Source Code Pro', monospace; font-weight: bold;
+    color: var(--accent); border: 1px solid var(--accent);
+    background: rgba(59, 130, 246, 0.05);
+    margin: 1rem 0 0.5rem 0;
+    width: fit-content;
+}
+
+.project-info { padding: 0 1.5rem 1.5rem 1.5rem; flex-grow: 1; }
+.project-info h3 { font-family: 'Montserrat', sans-serif; font-size: 1.3rem; margin-bottom: 0.5rem; }
+
+/* Award Styling */
+.award { 
+    font-size: 0.8rem; font-weight: 600; color: #065f46; 
+    background: #ecfdf5; padding: 8px 12px; border-radius: 8px; 
+    border-left: 4px solid #10b981; margin: 10px 0; 
+}
+
+.desc { font-size: 0.9rem; color: var(--gray-text); line-height: 1.6; }
+
+.itch-link { margin-top: auto; padding-top: 1rem; font-weight: bold; font-size: 0.9rem; }
+.itch-link a { color: var(--accent); text-decoration: none; }
+.itch-link a:hover { text-decoration: underline; }
+
+.slider-controls { 
+    padding: 10px; 
+    display: flex; 
+    gap: 10px; 
+    background: #fff; 
+    border-bottom: 1px solid var(--border-color); 
+}
+
+.slider-controls button { 
+    flex: 1; 
+    padding: 12px; /* Increased padding for better size */
+    cursor: pointer; 
+    border: 1px solid #ddd; 
+    background: white; 
+    border-radius: 6px; 
+    font-weight: 800; /* Makes text thicker */
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    transition: all 0.2s ease;
+}
+
+.slider-controls button:hover { 
+    background: var(--accent); 
+    color: white; 
+    border-color: var(--accent);
+}
 
 .download-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
-    padding: 12px 20px;
     background: var(--accent);
-    color: white !important;
-    text-decoration: none !important;
+    color: white !important; /* Forces text to stay white */
+    padding: 14px;
     border-radius: 8px;
+    text-decoration: none;
     font-weight: 700;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    margin-top: 15px;
+    transition: transform 0.2s, background 0.2s;
+    border: none;
+    width: 100%; /* Makes it fill the sidebar width */
+    box-sizing: border-box;
 }
 
 .download-btn:hover {
-    background: #2563eb;
+    background: #2563eb; /* Slightly darker blue */
     transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
 }
 
-/* --- Skill Badges --- */
-.sidebar-block { margin-top: 2.5rem; }
-
-.sidebar-block h3 { 
-    font-family: var(--font-header);
-    font-size: 0.85rem; 
-    text-transform: uppercase; 
-    color: var(--accent); 
-    margin-bottom: 1rem; 
-    border-bottom: 1px solid rgba(255,255,255,0.1); 
-    padding-bottom: 6px; 
-    font-weight: 700;
-}
-
-.skill-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.skill-badge {
-    padding: 4px 12px;
-    border-radius: 6px;
-    font-size: 0.7rem;
-    font-weight: 700;
-    font-family: var(--font-mono);
-    text-transform: uppercase;
-    border: 1px solid rgba(255,255,255,0.2);
-    background: rgba(255,255,255,0.05);
-}
-
-.unity { color: #4ade80; border-color: #22c55e; background: #22c55e15; }
-.csharp { color: #c084fc; border-color: #a855f7; background: #a855f715; }
-.cpp { color: #60a5fa; border-color: #3b82f6; background: #3b82f615; }
-.vfx { color: #fbbf24; border-color: #f59e0b; background: #f59e0b15; }
-
-/* --- Main Content --- */
-.main-content { 
-    flex-grow: 1; 
-    padding: 4rem; 
-    /* Removed overflow-y: auto so it scrolls with the page */
-}
-
-.section-title { 
-    font-family: var(--font-header);
-    font-size: 2.5rem; 
-    margin-bottom: 4rem; 
-    font-weight: 800; 
-    letter-spacing: -0.03em;
-}
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two columns */
-    gap: 2rem; /* Space between cards */
-    align-items: start;
-}
-/* --- Project Cards --- */
-.project-card {
-    display: flex;
-    flex-direction: column; /* Stack gallery on top of info */
-    gap: 1.5rem;
-    padding: 1.5rem;
-    background: #f8fafc;
-    border-radius: 16px;
-    border: 1px solid var(--border-color);
-    height: 100%; /* Makes cards equal height in a row */
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.05);
-}
-
-.project-gallery {
-    width: 100%;
-    flex: none;
-}
-
-.slider { 
-    width: 100%; 
-    height: 220px; /* Set a fixed height for all sliders */
-    background: #000; 
-    border-radius: 12px; 
-    overflow: hidden;
-    position: relative;
-}
-
-.slide { 
-    display: none; 
-    width: 100%; 
-    height: 100%; 
-    /* This makes every image fill the box perfectly without stretching */
-    object-fit: cover; 
-    object-position: center;
-    cursor: zoom-in;
-}
-
-.slide.active { display: block; }
-
-.slider-controls { margin-top: 15px; display: flex; gap: 10px; }
-
-.slider-controls button { 
-    flex: 1; 
-    padding: 10px; 
-    cursor: pointer; 
-    background: #ffffff; 
-    border: 1px solid var(--border-color); 
-    border-radius: 6px; 
-    font-weight: 700;
-    font-family: var(--font-header);
-    font-size: 0.7rem;
-    text-transform: uppercase;
-}
-
-.slider-controls button:hover {
-    background: var(--accent);
-    color: white;
-}
-
-.project-info h3 { 
-    font-size: 1.4rem; 
-    margin-bottom: 0.5rem;
-}
-
-.genre { 
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
-    font-weight: 600; 
-    color: var(--accent); 
-    margin-bottom: 12px;
-}
-
-.award { 
-    background: #ecfdf5;
-    color: #065f46;
-    padding: 6px 14px;
-    border-radius: 6px;
-    display: inline-block;
-    font-size: 0.85rem; 
-    margin-bottom: 15px; 
-    font-weight: 600; 
-    border: 1px solid #a7f3d0;
-}
-
-.desc {
-    font-size: 0.9rem;
-    display: -webkit-box;
-    -webkit-line-clamp: 4; /* Limits description height so cards stay similar */
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-
-/* --- Lightbox --- */
-.lightbox {
-    display: none;
-    position: fixed;
-    z-index: 2000;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(15, 23, 42, 0.95);
-    justify-content: center;
-    align-items: center;
-}
-
-.lightbox.active { display: flex; }
-
-.close-btn {
-    position: absolute;
-    top: 20px; right: 30px;
-    color: white;
-    font-size: 2.5rem;
-    cursor: pointer;
-}
-
-/* --- Responsive Layout --- */
-@media (max-width: 1100px) {
+/* Mobile */
+@media (max-width: 1000px) {
+    .projects-grid { grid-template-columns: 1fr; }
     .portfolio-wrapper { flex-direction: column; }
-    .sidebar { width: 100%; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
-    .project-card { flex-direction: column; padding: 1.5rem; }
-    .project-gallery { width: 100%; flex: none; }
-}
-
-@media (max-width: 900px) {
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .main-content {
-        padding: 2rem;
-    }
+    .sidebar { width: 100%; height: auto; position: relative; }
 }
