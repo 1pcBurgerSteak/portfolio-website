@@ -1,21 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ivan Tesorero | Game Developer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Source+Code+Pro:wght@400;600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Source+Code+Pro:wght@400;600&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <div class="portfolio-wrapper">
+
+        <!-- SIDEBAR -->
         <aside class="sidebar">
             <div class="profile-section">
-                <img src="Image/Tesorero_Ivan.jpg" alt="Ivan L. Tesorero" class="profile-img">
-                <h1>Ivan L. Tesorero</h1> 
-                <p class="tagline">Game Developer</p> 
-                <p class="bio">Passionate about creating games that offer <strong>fun</strong> and <strong>meaningful</strong> player experiences.</p>
+                <img src="Image/Tesorero_Ivan.jpg" class="profile-img">
+                <h1>Ivan L. Tesorero</h1>
+                <p class="tagline">Game Developer</p>
+                <p class="bio">
+                    Passionate about creating games that offer
+                    <strong>fun</strong> and <strong>meaningful</strong> experiences.
+                </p>
             </div>
 
             <div class="contact-info">
@@ -23,23 +33,28 @@
                 <p>📍 Naga City, Philippines</p>
                 <p>📧 <a href="mailto:ivantesorero0@gmail.com">ivantesorero0@gmail.com</a></p>
                 <p>📞 +09937635110</p>
+
                 <a href="TESORERO_CV.pdf" class="download-btn" download>
-                    <span>📄 Download CV (PDF)</span>
+                    📄 Download CV (PDF)
                 </a>
             </div>
 
+            <!-- ACHIEVEMENTS -->
             <div class="achievements">
                 <h3>Achievements</h3>
+
                 <div class="achievement-item">
                     <span class="dot-marker gold"></span>
-                    <p>🏆 2nd Runner Up - Bicol Myth Game Jam (2025)</p>
+                    <p>🏆 2nd Runner Up – Bicol Myth Game Jam (2025)</p>
                 </div>
+
                 <div class="achievement-item">
                     <span class="dot-marker blue"></span>
-                    <p>🎖️ Top 19 Semi-Finalist - YCC2</p>
+                    <p>🎖️ Top 19 Semi-Finalist – YCC2</p>
                 </div>
             </div>
 
+            <!-- TECHNICAL SKILLS -->
             <div class="sidebar-block">
                 <h3>Technical Skills</h3>
                 <div class="skill-container">
@@ -54,125 +69,213 @@
             </div>
         </aside>
 
+        <!-- MAIN CONTENT -->
         <main class="main-content">
             <h2 class="section-title">Featured Projects</h2>
+
             <div class="projects-grid">
-                
+
+                <!-- PROJECT CARD -->
                 <div class="project-card">
                     <div class="project-gallery">
-                        <div class="slider" id="slider-saldang">
-                            <img src="Image/xwnWfT.png" class="slide active">
-                            <img src="Image/saldang (1).jpg" class="slide">
-                            <img src="Image/saldang (2).jpg" class="slide">
-                            <img src="Image/saldang (3).jpg" class="slide">
-                            <img src="Image/saldang (4).jpg" class="slide">
-                        </div>
-                        <div class="slider-controls">
-                            <button onclick="moveSlide('slider-saldang', -1)">Prev</button>
-                            <button onclick="moveSlide('slider-saldang', 1)">Next</button>
-                        </div>
+                        <img src="Image/xwnWfT.png" class="project-thumb" data-gallery='[
+                            "Image/xwnWfT.png",
+                            "Image/saldang (1).jpg",
+                            "Image/saldang (2).jpg",
+                            "Image/saldang (3).jpg",
+                            "Image/saldang (4).jpg",
+                            "Saldang.mp4"
+                        ]' alt="Saldang">
                     </div>
+
                     <div class="project-info">
-                        <h3>Saldang</h3> 
+                        <h3>Saldang</h3>
                         <span class="genre-badge">2D Action Roguelike</span>
-                        <p class="award">Won 2nd Runner Up - Bicol Myth Game Jam</p>
-                        <p class="desc">A Vampire-Survivor like game with illumanation mechanics. I built <strong>main gameplay, Combat systems, Dynamic enemy spawn, Boss design and a Different upgrade system from Vampire Survivor in C#. </strong></p>
-                        <p class="itch-link">itch.io: <a href="https://itch.io/jam/-mythic-bicol-game-jam-2025/rate/4003600">Visit Project</a></p>
+                        <p class="award">2nd Runner Up – Bicol Myth Game Jam</p>
+                        <p class="desc">
+                            Vampire-Survivor inspired game with illumination mechanics.
+                            Built combat, enemy spawns, bosses, and upgrade systems in C#.
+                        </p>
                     </div>
                 </div>
 
                 <div class="project-card">
                     <div class="project-gallery">
-                        <div class="slider" id="slider-kupido">
-                            <img src="Image/MR. KUPIDO.png.jpeg" class="slide active">
-                            <img src="Image/kupido (1).png" class="slide">
-                            <img src="Image/kupido (2).png" class="slide">
-                            <img src="Image/kupido (3).png" class="slide">
-                            <img src="Image/kupido (4).png" class="slide">
-                        </div>
-                        <div class="slider-controls">
-                            <button onclick="moveSlide('slider-kupido', -1)">Prev</button>
-                            <button onclick="moveSlide('slider-kupido', 1)">Next</button>
-                        </div>
+                        <img src="Image/MR. KUPIDO.png.jpeg" class="project-thumb" data-gallery='[
+                            "Image/MR. KUPIDO.png.jpeg",
+                            "Image/kupido (1).png",
+                            "Image/kupido (2).png",
+                            "Image/kupido (3).png",
+                            "Image/kupido (4).png"
+                        ]' alt="Kupido">
                     </div>
+
                     <div class="project-info">
-                        <h3>Mr. Kupido</h3> 
+                        <h3>Kupido</h3>
                         <span class="genre-badge">2D Casual, Puzzle</span>
                         <p class="award">Top 19 Semi-Finalist (YCC2)</p>
-                        <p class="desc">A simple point and click puzzle with fun concept like the <strong>"Couple of the day missions"</strong>. I Programmed interactive mechanics and a <strong>random NPC generation system</strong> for puzzles.</p>
+                        <p class="desc">
+                            A simple point and click puzzle with fun concept like the <strong>"Couple of the day
+                                missions"</strong>.
+                            I Programmed interactive mechanics and a <strong>random NPC generation system</strong> for
+                            puzzles.
+                        </p>
                     </div>
                 </div>
 
                 <div class="project-card">
                     <div class="project-gallery">
-                        <div class="slider" id="slider-sort">
-                            <img src="Image/plastic cup.png" class="slide active">
-                            <img src="Image/capstone (1).jpg" class="slide">
-                            <img src="Image/capstone (2).jpg" class="slide">
-                            <img src="Image/capstone (3).jpg" class="slide">
-                            <img src="Image/capstone (4).jpg" class="slide">
-                            <img src="Image/capstone (5).jpg" class="slide">
-                        </div>
-                        <div class="slider-controls">
-                            <button onclick="moveSlide('slider-sort', -1)">Prev</button>
-                            <button onclick="moveSlide('slider-sort', 1)">Next</button>
-                        </div>
+                        <img src="Image/plastic cup.png" class="project-thumb" data-gallery='[
+                            "Image/plastic cup.png",
+                            "Image/capstone (1).jpg",
+                            "Image/capstone (2).jpg",
+                            "Image/capstone (3).jpg",
+                            "Image/capstone (4).jpg",
+                            "Image/capstone (5).jpg",
+                            "capstone.mp4"
+                        ]' alt="Sort It Out">
                     </div>
+
                     <div class="project-info">
-                        <h3>Sort-It-Out</h3> 
-                        <span class="genre-badge">3D Survival, Exploration</span>
-                        <p class="desc"><strong>Capstone Project</strong>. Teaches waste management through survival mechanics and trash sorting. I programmed most of the game systems including <strong>Player controls and systems, Inventory System, Item Interactions, and  Random generated rooms</strong>.</p>
+                        <h3>Sort It Out</h3>
+                        <span class="genre-badge">3D Survival, Exploration, Educational</span>
+                        <p class="desc">
+                            <strong>Capstone Project</strong>. Teaches waste management through survival mechanics and
+                            trash sorting.
+                            I programmed most of the game systems including
+                            <strong>Player controls, Inventory System, Item Interactions, and Random Generated
+                                Rooms</strong>.
+                        </p>
                     </div>
                 </div>
 
                 <div class="project-card">
                     <div class="project-gallery">
-                        <div class="slider" id="slider-dragon">
-                            <img src="Image/Chrage.png" class="slide active">
-                            <img src="Image/dragon (1).png" class="slide">
-                            <img src="Image/dragon (2).png" class="slide">
-                            <img src="Image/dragon (3).png" class="slide">
-                            <img src="Image/dragon (4).png" class="slide">
-                            <img src="Image/dragon (5).png" class="slide">
-                        </div>
-                        <div class="slider-controls">
-                            <button onclick="moveSlide('slider-dragon', -1)">Prev</button>
-                            <button onclick="moveSlide('slider-dragon', 1)">Next</button>
-                        </div>
+                        <img src="Image/Chrage.png" class="project-thumb" data-gallery='[
+                            "Image/Chrage.png",
+                            "Image/dragon (1).png",
+                            "Image/dragon (2).png",
+                            "Image/dragon (3).png",
+                            "Image/dragon (4).png",
+                            "Image/dragon (5).png",
+                            "Untitled design.mp4"
+                        ]' alt="Dragon Gears">
                     </div>
+
                     <div class="project-info">
-                        <h3>Dragon Gears</h3> 
+                        <h3>Dragon Gears</h3>
                         <span class="genre-badge">2D Platformer, Shooter</span>
-                        <p class="desc">Solo project featuring precision platforming and <strong>difficult bosses</strong>. Developed player AI and movement.</p>
-                        <p class="itch-link">itch.io: <a href="https://1pcburgersteak.itch.io/dragon-gears">Visit Project</a></p>
+                        <p class="desc">
+                            Solo project featuring precision platforming and
+                            <strong>difficult bosses</strong>. Developed player AI and movement.
+                            <br>
+                            itch.io: <a href="https://1pcburgersteak.itch.io/dragon-gears">Visit Project</a>
+                        </p>
                     </div>
                 </div>
 
                 <div class="project-card">
                     <div class="project-gallery">
-                        <div class="slider" id="slider-bolz">
-                            <img src="Image/Bolz MiniGame Poster.jpg" class="slide active">
-                            <img src="Image/Bolz (4).png" class="slide">
-                            <img src="Image/Bolz (3).png" class="slide">
-                            <img src="Image/Bolz (2).png" class="slide">
-                            <img src="Image/Bolz (1).png" class="slide">
-                        </div>
-                        <div class="slider-controls">
-                            <button onclick="moveSlide('slider-bolz', -1)">Prev</button>
-                            <button onclick="moveSlide('slider-bolz', 1)">Next</button>
-                        </div>
+                        <img src="Image/Bolz MiniGame Poster.jpg" class="project-thumb" data-gallery='[
+                            "Image/Bolz MiniGame Poster.jpg",
+                            "Image/bolz (1).png",
+                            "Image/bolz (2).png",
+                            "Image/bolz (3).png",
+                            "Image/bolz (4).png",
+                            "Bolz Minigame Clip.mp4"
+                        ]' alt="Bolz">
                     </div>
+
                     <div class="project-info">
-                        <h3>Bolz</h3> 
+                        <h3>Bolz</h3>
                         <span class="genre-badge">Casual, Arcade</span>
-                        <p class="desc">Solo project. A simple brick breaker game with a fun twist to it. I <strong>upgrade system</strong> and falling brick mechanics. to make the players engaged.</p>
-                        <p class="itch-link">itch.io: <a href="https://1pcburgersteak.itch.io/bolz">Visit Project</a></p>
+                        <p class="desc">
+                            Solo project. A simple brick breaker game with a fun twist to it. I <strong>upgrade
+                                system</strong> and falling brick mechanics. to make the players engaged.
+                            <br>itch.io:<a href="https://1pcburgersteak.itch.io/bolz">Visit Project</a>
+                        </p>
                     </div>
                 </div>
+
+
+                <!-- ADD MORE PROJECTS USING SAME STRUCTURE -->
+
             </div>
         </main>
     </div>
 
-    <script src="script.js"></script>
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lightbox">
+        <button class="lightbox-btn left" onclick="changeMedia(-1)">❮</button>
+
+        <div class="lightbox-content">
+            <img id="lightbox-img">
+            <video id="lightbox-video" controls></video>
+        </div>
+
+        <button class="lightbox-btn right" onclick="changeMedia(1)">❯</button>
+        <span class="lightbox-close" onclick="closeLightbox()">✕</span>
+    </div>
+
+    <!-- SCRIPT -->
+    <script>
+        let gallery = [];
+        let currentIndex = 0;
+
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('project-thumb')) {
+                gallery = JSON.parse(e.target.dataset.gallery);
+                currentIndex = 0;
+                openLightbox();
+            }
+        });
+
+        function openLightbox() {
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            showMedia();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = 'auto';
+
+            const video = document.getElementById('lightbox-video');
+            video.pause();
+        }
+
+        function changeMedia(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = gallery.length - 1;
+            if (currentIndex >= gallery.length) currentIndex = 0;
+            showMedia();
+        }
+
+        function showMedia() {
+            const img = document.getElementById('lightbox-img');
+            const video = document.getElementById('lightbox-video');
+
+            img.style.display = 'none';
+            video.style.display = 'none';
+            video.pause();
+
+            const src = gallery[currentIndex];
+
+            if (src.endsWith('.mp4')) {
+                video.src = src;
+                video.style.display = 'block';
+                video.play();
+            } else {
+                img.src = src;
+                img.style.display = 'block';
+            }
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+
 </body>
+
 </html>
