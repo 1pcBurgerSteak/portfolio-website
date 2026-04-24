@@ -1,55 +1,92 @@
-let gallery = [];
-let currentIndex = 0;
+// ── HAMBURGER MENU ──
+const hamburger = document.getElementById('hamburger');
+const navRight  = document.getElementById('nav-right');
 
-document.addEventListener('click', (e) => {
-    if (e.target.classList.contains('project-thumb')) {
-        gallery = JSON.parse(e.target.dataset.gallery);
-        currentIndex = 0;
-        openLightbox();
-    }
+hamburger.addEventListener('click', () => {
+  const isOpen = navRight.classList.toggle('open');
+  hamburger.setAttribute('aria-expanded', isOpen);
 });
 
-function openLightbox() {
-    document.getElementById('lightbox').classList.add('active');
-    document.body.style.overflow = 'hidden';
-    showMedia();
+function closeMenu() {
+  navRight.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', false);
+}
+
+document.addEventListener('click', (e) => {
+  if (!hamburger.contains(e.target) && !navRight.contains(e.target)) closeMenu();
+});
+
+// ── GAME CARD SLIDER ──
+function initSliders() {
+  document.querySelectorAll('.game-slider').forEach(slider => {
+    const slides = slider.querySelectorAll('.slide');
+    const dotsEl = slider.querySelector('.slider-dots');
+
+    // Build dots
+    slides.forEach((_, i) => {
+      const dot = document.createElement('div');
+      dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
+      dot.addEventListener('click', () => goToSlide(slider, i));
+      dotsEl.appendChild(dot);
+    });
+  });
+}
+
+function goToSlide(slider, index) {
+  const slides = slider.querySelectorAll('.slide');
+  const dots   = slider.querySelectorAll('.slider-dot');
+  const total  = slides.length;
+
+  // Pause/unload iframes when leaving video slide
+  const current = parseInt(slider.dataset.index);
+  const currentSlide = slides[current];
+  if (currentSlide.classList.contains('slide-video')) {
+    const iframe = currentSlide.querySelector('iframe');
+    iframe.src = ''; // stop video
+  }
+
+  // Clamp index with wrap
+  index = ((index % total) + total) % total;
+  slider.dataset.index = index;
+
+  slides.forEach((s, i) => s.classList.toggle('active', i === index));
+  dots.forEach((d, i)   => d.classList.toggle('active', i === index));
+
+  // Lazy-load iframe only when video slide is active
+  const newSlide = slides[index];
+  if (newSlide.classList.contains('slide-video')) {
+    const iframe = newSlide.querySelector('iframe');
+    if (!iframe.src || iframe.src === window.location.href) {
+      iframe.src = iframe.dataset.src;
+    }
+  }
+}
+
+function slideCard(btn, dir) {
+  const slider = btn.closest('.game-slider');
+  const current = parseInt(slider.dataset.index);
+  goToSlide(slider, current + dir);
+}
+
+// ── LIGHTBOX (for image slides) ──
+function openLightbox(src) {
+  const lb = document.getElementById('lightbox');
+  document.getElementById('lightbox-img').src = src;
+  lb.classList.add('open');
+  document.body.style.overflow = 'hidden';
 }
 
 function closeLightbox() {
-    document.getElementById('lightbox').classList.remove('active');
-    document.body.style.overflow = 'auto';
-
-    const video = document.getElementById('lightbox-video');
-    video.pause();
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
 }
 
-function changeMedia(direction) {
-    currentIndex += direction;
-    if (currentIndex < 0) currentIndex = gallery.length - 1;
-    if (currentIndex >= gallery.length) currentIndex = 0;
-    showMedia();
-}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 
-function showMedia() {
-    const img = document.getElementById('lightbox-img');
-    const video = document.getElementById('lightbox-video');
-
-    img.style.display = 'none';
-    video.style.display = 'none';
-    video.pause();
-
-    const src = gallery[currentIndex];
-
-    if (src.endsWith('.mp4')) {
-        video.src = src;
-        video.style.display = 'block';
-        video.play();
-    } else {
-        img.src = src;
-        img.style.display = 'block';
-    }
-}
-
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeLightbox();
+// Click image slides to open lightbox
+document.querySelectorAll('.slide:not(.slide-video) img').forEach(img => {
+  img.addEventListener('click', () => openLightbox(img.src));
 });
+
+// Init on load
+initSliders();

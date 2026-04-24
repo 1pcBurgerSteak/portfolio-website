@@ -1,281 +1,480 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ivan Tesorero | Game Developer</title>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Source+Code+Pro:wght@400;600&family=Open+Sans:wght@400;600&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ivan Tesorero — Game Developer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
 </head>
-
 <body>
 
-    <div class="portfolio-wrapper">
+<!-- ── NAV ── -->
+<nav>
+  <div class="logo">Ivan Tesorero</div>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-right" id="nav-right">
+    <a href="#about" onclick="closeMenu()">About</a>
+    <a href="#games" onclick="closeMenu()">Games</a>
+    <a href="#achievements" onclick="closeMenu()">Awards</a>
+    <a href="#contact" onclick="closeMenu()">Contact</a>
+    <a href="https://yourusername.itch.io" class="itch-btn" target="_blank" rel="noopener">itch.io ↗</a>
+  </div>
+</nav>
 
-        <!-- SIDEBAR -->
-        <aside class="sidebar">
-            <div class="profile-section">
-                <img src="Image/Tesorero_Ivan.jpg" class="profile-img">
-                <h1>Ivan L. Tesorero</h1>
-                <p class="tagline">Game Developer</p>
-                <p class="bio">
-                    Passionate about creating games that offer
-                    <strong>fun</strong> and <strong>meaningful</strong> experiences.
-                </p>
-            </div>
-
-            <div class="contact-info">
-                <h3>Contact</h3>
-                <p>📍 Naga City, Philippines</p>
-                <p>📧 <a href="mailto:ivantesorero0@gmail.com">ivantesorero0@gmail.com</a></p>
-                <p>📞 +09937635110</p>
-
-                <a href="TESORERO_CV.pdf" class="download-btn" download>
-                    📄 Download CV (PDF)
-                </a>
-            </div>
-
-            <!-- ACHIEVEMENTS -->
-            <div class="achievements">
-                <h3>Achievements</h3>
-
-                <div class="achievement-item">
-                    <span class="dot-marker gold"></span>
-                    <p>🏆 2nd Runner Up – Bicol Myth Game Jam (2025)</p>
-                </div>
-
-                <div class="achievement-item">
-                    <span class="dot-marker blue"></span>
-                    <p>🎖️ Top 19 Semi-Finalist – YCC2</p>
-                </div>
-            </div>
-
-            <!-- TECHNICAL SKILLS -->
-            <div class="sidebar-block">
-                <h3>Technical Skills</h3>
-                <div class="skill-container">
-                    <span class="skill-badge unity">Unity</span>
-                    <span class="skill-badge csharp">C#</span>
-                    <span class="skill-badge cpp">C++</span>
-                    <span class="skill-badge vfx">Game VFX</span>
-                    <span class="skill-badge tools">GitHub</span>
-                    <span class="skill-badge tools">Maya</span>
-                    <span class="skill-badge tools">Adobe Suite</span>
-                </div>
-            </div>
-        </aside>
-
-        <!-- MAIN CONTENT -->
-        <main class="main-content">
-            <h2 class="section-title">Featured Projects</h2>
-
-            <div class="projects-grid">
-
-                <!-- PROJECT CARD -->
-                <div class="project-card">
-                    <div class="project-gallery">
-                        <img src="Image/xwnWfT.png" class="project-thumb" data-gallery='[
-                            "Image/xwnWfT.png",
-                            "Image/saldang (1).jpg",
-                            "Image/saldang (2).jpg",
-                            "Image/saldang (3).jpg",
-                            "Image/saldang (4).jpg",
-                            "Saldang.mp4"
-                        ]' alt="Saldang">
-                    </div>
-
-                    <div class="project-info">
-                        <h3>Saldang</h3>
-                        <span class="genre-badge">2D Action Roguelike</span>
-                        <p class="award">2nd Runner Up – Bicol Myth Game Jam</p>
-                        <p class="desc">
-                            Vampire-Survivor inspired game with illumination mechanics.
-                            Built combat, enemy spawns, bosses, and upgrade systems in C#.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-gallery">
-                        <img src="Image/MR. KUPIDO.png.jpeg" class="project-thumb" data-gallery='[
-                            "Image/MR. KUPIDO.png.jpeg",
-                            "Image/kupido (1).png",
-                            "Image/kupido (2).png",
-                            "Image/kupido (3).png",
-                            "Image/kupido (4).png"
-                        ]' alt="Kupido">
-                    </div>
-
-                    <div class="project-info">
-                        <h3>Kupido</h3>
-                        <span class="genre-badge">2D Casual, Puzzle</span>
-                        <p class="award">Top 19 Semi-Finalist (YCC2)</p>
-                        <p class="desc">
-                            A simple point and click puzzle with fun concept like the <strong>"Couple of the day
-                                missions"</strong>.
-                            I Programmed interactive mechanics and a <strong>random NPC generation system</strong> for
-                            puzzles.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-gallery">
-                        <img src="Image/plastic cup.png" class="project-thumb" data-gallery='[
-                            "Image/plastic cup.png",
-                            "Image/capstone (1).jpg",
-                            "Image/capstone (2).jpg",
-                            "Image/capstone (3).jpg",
-                            "Image/capstone (4).jpg",
-                            "Image/capstone (5).jpg",
-                            "capstone.mp4"
-                        ]' alt="Sort It Out">
-                    </div>
-
-                    <div class="project-info">
-                        <h3>Sort It Out</h3>
-                        <span class="genre-badge">3D Survival, Exploration, Educational</span>
-                        <p class="desc">
-                            <strong>Capstone Project</strong>. Teaches waste management through survival mechanics and
-                            trash sorting.
-                            I programmed most of the game systems including
-                            <strong>Player controls, Inventory System, Item Interactions, and Random Generated
-                                Rooms</strong>.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-gallery">
-                        <img src="Image/Chrage.png" class="project-thumb" data-gallery='[
-                            "Image/Chrage.png",
-                            "Image/dragon (1).png",
-                            "Image/dragon (2).png",
-                            "Image/dragon (3).png",
-                            "Image/dragon (4).png",
-                            "Image/dragon (5).png",
-                            "Untitled design.mp4"
-                        ]' alt="Dragon Gears">
-                    </div>
-
-                    <div class="project-info">
-                        <h3>Dragon Gears</h3>
-                        <span class="genre-badge">2D Platformer, Shooter</span>
-                        <p class="desc">
-                            Solo project featuring precision platforming and
-                            <strong>difficult bosses</strong>. Developed player AI and movement.
-                            <br>
-                            itch.io: <a href="https://1pcburgersteak.itch.io/dragon-gears">Visit Project</a>
-                        </p>
-                    </div>
-                </div>
-
-                <div class="project-card" >
-                    <div class="project-gallery">
-                        <img src="Image/Bolz MiniGame Poster.jpg" class="project-thumb" data-gallery='[
-                            "Image/Bolz MiniGame Poster.jpg",
-                            "Image/bolz (1).png",
-                            "Image/bolz (2).png",
-                            "Image/bolz (3).png",
-                            "Image/bolz (4).png",
-                            "Bolz Minigame Clip.mp4"
-                        ]' alt="Bolz">
-                    </div>
-
-                    <div class="project-info">
-                        <h3>Bolz</h3>
-                        <span class="genre-badge">Casual, Arcade</span>
-                        <p class="desc">
-                            Solo project. A simple brick breaker game with a fun twist to it. I <strong>upgrade
-                                system</strong> and falling brick mechanics. to make the players engaged.
-                            <br>itch.io:<a href="https://1pcburgersteak.itch.io/bolz">Visit Project</a>
-                        </p>
-                    </div>
-                </div>
-
-
-                <!-- ADD MORE PROJECTS USING SAME STRUCTURE -->
-
-            </div>
-        </main>
+<!-- ── ABOUT ── -->
+<section id="about">
+  <div class="about-text">
+    <p class="section-label">About Me</p>
+    <h2>Developer &amp; Builder</h2>
+    <p>
+      I'm a game developer who started making games because I wanted the ones I couldn't find.
+      I work mostly in Unity with C#, and I enjoy everything from gameplay feel to systems architecture.
+    </p>
+    <div class="about-info-row">
+      <div class="about-info-item">
+        <svg viewBox="0 0 24 24" stroke-width="1.8" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
+        Naga City, Philippines
+      </div>
+      <div class="about-info-item">
+        <svg viewBox="0 0 24 24" stroke-width="1.8" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <a href="mailto:ivantesorero0@gmail.com">ivantesorero0@gmail.com</a>
+      </div>
     </div>
+    <a href="TESORERO_CV.pdf" download class="cv-btn">
+      <svg viewBox="0 0 24 24" stroke-width="2" fill="none"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Download CV
+    </a>
+    <div class="skills-pills">
+      <span class="pill hi">Unity</span>
+      <span class="pill hi">C#</span>
+      <span class="pill hi">C++</span>
+      <span class="pill">Git</span>
+      <span class="pill">Game Design</span>
+      <span class="pill">Playfab</span>
+      <span class="pill">Firebase</span>
+      <span class="pill">Online Backend</span>
+    </div>
+  </div>
+  <div class="about-photo-wrap">
+    <img src="Image/Tesorero_Ivans.png" alt="Ivan Tesorero" class="about-photo-img">
+  </div>
+</section>
 
-    <!-- LIGHTBOX -->
-    <div id="lightbox" class="lightbox">
-        <button class="lightbox-btn left" onclick="changeMedia(-1)">❮</button>
+<hr class="divider" />
 
-        <div class="lightbox-content">
-            <img id="lightbox-img">
-            <video id="lightbox-video" controls></video>
+<!-- ── GAMES ── -->
+<section id="games">
+  <p class="section-label">Games</p>
+  <h2>Games</h2>
+  <div class="games-grid">
+
+    <!-- ══ BOLZ ══ (poster + 4 shots + video) -->
+    <div class="game-card">
+      <div class="game-slider" data-index="0">
+        <div class="slide active"><img src="Poster/bolz_poster.jpg" alt="Bolz poster"></div>
+        <div class="slide"><img src="images/bolz_1.png" alt="Bolz gameplay 1"></div>
+        <div class="slide"><img src="images/bolz_2.png" alt="Bolz gameplay 2"></div>
+        <div class="slide"><img src="images/bolz_3.png" alt="Bolz gameplay 3"></div>
+        <div class="slide"><img src="images/bolz_4.png" alt="Bolz gameplay 4"></div>
+        <div class="slide slide-video">
+          <iframe src="" data-src="https://www.youtube.com/embed/6K0Koix9sTg" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
         </div>
-
-        <button class="lightbox-btn right" onclick="changeMedia(1)">❯</button>
-        <span class="lightbox-close" onclick="closeLightbox()">✕</span>
+        <button class="slider-btn prev" onclick="slideCard(this,-1)">&#8249;</button>
+        <button class="slider-btn next" onclick="slideCard(this,1)">&#8250;</button>
+        <div class="slider-dots"></div>
+      </div>
+      <div class="game-info">
+        <div class="game-genre">Arcade · Mobile · 2025</div>
+        <div class="game-name">Bolz</div>
+        <p class="game-desc">A brick breaker game that increases chaos the longer you play.</p>
+        <div class="contrib-block">
+          <div class="contrib-label">My Contributions</div>
+          <p class="contrib-text">Created the assets shown.</p>
+          <p class="contrib-text">Implemented a level up system with unique power ups.</p>
+          <p class="contrib-text">Implemented a dynamic difficulty scaling system based on player performance.</p>
+        </div>
+        <div class="game-footer">
+          <div class="game-tags"><span class="tag">Unity</span><span class="tag">Solo</span></div>
+        </div>
+      </div>
     </div>
 
-    <!-- SCRIPT -->
-    <script>
-        let gallery = [];
-        let currentIndex = 0;
+    <!-- ══ BOUNCER ══ (no poster, 3 shots + video) -->
+    <div class="game-card">
+      <div class="game-slider" data-index="0">
+        <div class="slide active"><img src="images/bouncer_1.png" alt="Bouncer gameplay 1"></div>
+        <div class="slide"><img src="images/bouncer_2.png" alt="Bouncer gameplay 2"></div>
+        <div class="slide"><img src="images/bouncer_3.png" alt="Bouncer gameplay 3"></div>
+        <div class="slide slide-video">
+          <iframe src="" data-src="https://www.youtube.com/embed/pGt8lOEekPA" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+        </div>
+        <button class="slider-btn prev" onclick="slideCard(this,-1)">&#8249;</button>
+        <button class="slider-btn next" onclick="slideCard(this,1)">&#8250;</button>
+        <div class="slider-dots"></div>
+      </div>
+      <div class="game-info">
+        <div class="game-genre">Arcade · PC · 2023</div>
+        <div class="game-name">Bouncer</div>
+        <p class="game-desc">An earlier version of Bolz but on PC.</p>
+        <div class="contrib-block">
+          <div class="contrib-label">My Contributions</div>
+          <p class="contrib-text">Implemented a mechanic to make the enemies more engaging.</p>
+        </div>
+        <div class="game-footer">
+          <div class="game-tags"><span class="tag">Unity</span><span class="tag">Team</span></div>
+        </div>
+      </div>
+    </div>
 
-        document.addEventListener('click', (e) => {
-            if (e.target.classList.contains('project-thumb')) {
-                gallery = JSON.parse(e.target.dataset.gallery);
-                currentIndex = 0;
-                openLightbox();
-            }
-        });
+    <!-- ══ BOX RACE ══ (poster + 2 shots + video) -->
+    <div class="game-card">
+      <div class="game-slider" data-index="0">
+        <div class="slide active"><img src="Poster/box_race_poster.png" alt="Box Race poster"></div>
+        <div class="slide"><img src="images/box_race_1.png" alt="Box Race gameplay 1"></div>
+        <div class="slide"><img src="images/box_race_2.png" alt="Box Race gameplay 2"></div>
+        <div class="slide slide-video">
+          <iframe src="" data-src="https://www.youtube.com/embed/ERv5_XVbqLk" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+        </div>
+        <button class="slider-btn prev" onclick="slideCard(this,-1)">&#8249;</button>
+        <button class="slider-btn next" onclick="slideCard(this,1)">&#8250;</button>
+        <div class="slider-dots"></div>
+      </div>
+      <div class="game-info">
+        <div class="game-genre">Arcade · Multiplayer · PC · 2024</div>
+        <div class="game-name">Box Race</div>
+        <p class="game-desc">A 2 player runner game where you collect points and compete against each other by collecting more points or destroying them.</p>
+        <div class="contrib-block">
+          <div class="contrib-label">My Contributions</div>
+          <p class="contrib-text">Created the assets of the game.</p>
+          <p class="contrib-text">Programmed the core gameplay mechanics.</p>
+        </div>
+        <div class="game-footer">
+          <div class="game-tags"><span class="tag">Unity</span><span class="tag">Team</span></div>
+        </div>
+      </div>
+    </div>
 
-        function openLightbox() {
-            document.getElementById('lightbox').classList.add('active');
-            document.body.style.overflow = 'hidden';
-            showMedia();
-        }
+    <!-- ══ BULLET STORM ══ (no poster, 4 shots + video) -->
+    <div class="game-card">
+      <div class="game-slider" data-index="0">
+        <div class="slide active"><img src="images/bullet_storm_1.png" alt="Bullet Storm gameplay 1"></div>
+        <div class="slide"><img src="images/bullet_storm_2.png" alt="Bullet Storm gameplay 2"></div>
+        <div class="slide"><img src="images/bullet_storm_3.png" alt="Bullet Storm gameplay 3"></div>
+        <div class="slide"><img src="images/bullet_storm_4.png" alt="Bullet Storm gameplay 4"></div>
+        <div class="slide slide-video">
+          <iframe src="" data-src="https://www.youtube.com/embed/Df6li96cyfM" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+        </div>
+        <button class="slider-btn prev" onclick="slideCard(this,-1)">&#8249;</button>
+        <button class="slider-btn next" onclick="slideCard(this,1)">&#8250;</button>
+        <div class="slider-dots"></div>
+      </div>
+      <div class="game-info">
+        <div class="game-genre">Shooter · Multiplayer · PC · 2023</div>
+        <div class="game-name">Bullet Storm</div>
+        <p class="game-desc">A one button shooter game with fast-paced action, challenging maps and fun gameplay.</p>
+        <div class="contrib-block">
+          <div class="contrib-label">My Contributions</div>
+          <p class="contrib-text">Programmed the core gameplay mechanics.</p>
+          <p class="contrib-text">Created a character select screen for the players.</p>
+        </div>
+        <div class="game-footer">
+          <div class="game-tags"><span class="tag">Unity</span><span class="tag">Team</span></div>
+        </div>
+      </div>
+    </div>
 
-        function closeLightbox() {
-            document.getElementById('lightbox').classList.remove('active');
-            document.body.style.overflow = 'auto';
+    <!-- ══ DRAGON GEARS ══ (poster + 5 shots + video) -->
+    <div class="game-card">
+      <div class="game-slider" data-index="0">
+        <div class="slide active"><img src="Poster/dragon_gears_poster.png" alt="Dragon Gears poster"></div>
+        <div class="slide"><img src="images/dragon_gears_1.png" alt="Dragon Gears gameplay 1"></div>
+        <div class="slide"><img src="images/dragon_gears_2.png" alt="Dragon Gears gameplay 2"></div>
+        <div class="slide"><img src="images/dragon_gears_3.png" alt="Dragon Gears gameplay 3"></div>
+        <div class="slide"><img src="images/dragon_gears_4.png" alt="Dragon Gears gameplay 4"></div>
+        <div class="slide"><img src="images/dragon_gears_5.png" alt="Dragon Gears gameplay 5"></div>
+        <div class="slide slide-video">
+          <iframe src="" data-src="https://www.youtube.com/embed/cx-qYU2yIzY" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+        </div>
+        <button class="slider-btn prev" onclick="slideCard(this,-1)">&#8249;</button>
+        <button class="slider-btn next" onclick="slideCard(this,1)">&#8250;</button>
+        <div class="slider-dots"></div>
+      </div>
+      <div class="game-info">
+        <div class="game-genre">Platformer · Single-player · PC · 2024</div>
+        <div class="game-name">Dragon Gears</div>
+        <p class="game-desc">A solo project inspired by Megaman X — challenging levels, tight platforming and fun bosses.</p>
+        <div class="contrib-block">
+          <div class="contrib-label">My Contributions</div>
+          <p class="contrib-text">Created the assets shown in the game.</p>
+          <p class="contrib-text">Programmed the core gameplay mechanics.</p>
+          <p class="contrib-text">Created a boss fight with a simple AI.</p>
+        </div>
+        <div class="game-footer">
+          <div class="game-tags"><span class="tag">Unity</span><span class="tag">Solo</span></div>
+        </div>
+      </div>
+    </div>
 
-            const video = document.getElementById('lightbox-video');
-            video.pause();
-        }
+    <!-- ══ KUPIDO ══ (poster + 4 shots + video) -->
+    <div class="game-card">
+      <div class="game-slider" data-index="0">
+        <div class="slide active"><img src="Poster/kupido_poster.jpeg" alt="Kupido poster"></div>
+        <div class="slide"><img src="images/kupido_1.png" alt="Kupido gameplay 1"></div>
+        <div class="slide"><img src="images/kupido_2.png" alt="Kupido gameplay 2"></div>
+        <div class="slide"><img src="images/kupido_3.png" alt="Kupido gameplay 3"></div>
+        <div class="slide"><img src="images/kupido_4.png" alt="Kupido gameplay 4"></div>
+        <div class="slide slide-video">
+          <iframe src="" data-src="https://www.youtube.com/embed/Fqi7UZ_x1D4" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+        </div>
+        <button class="slider-btn prev" onclick="slideCard(this,-1)">&#8249;</button>
+        <button class="slider-btn next" onclick="slideCard(this,1)">&#8250;</button>
+        <div class="slider-dots"></div>
+      </div>
+      <div class="game-info">
+        <div class="game-genre">Arcade · 2025</div>
+        <div class="game-name">Kupido</div>
+        <p class="game-desc">A first person puzzle shooter game where you try to match the "Couple of the day" in a crowd of people.</p>
+        <div class="contrib-block">
+          <div class="contrib-label">My Contributions</div>
+          <p class="contrib-text">Programmed the core gameplay mechanics.</p>
+          <p class="contrib-text">Created a random NPC generator.</p>
+        </div>
+        <div class="game-footer">
+          <div class="game-tags"><span class="tag">Unity</span><span class="tag">Team</span></div>
+        </div>
+      </div>
+    </div>
 
-        function changeMedia(direction) {
-            currentIndex += direction;
-            if (currentIndex < 0) currentIndex = gallery.length - 1;
-            if (currentIndex >= gallery.length) currentIndex = 0;
-            showMedia();
-        }
+    <!-- ══ PARKKEEPER ══ (poster + 4 shots + video) -->
+    <div class="game-card">
+      <div class="game-slider" data-index="0">
+        <div class="slide active"><img src="Poster/park_keeper_poster.jpg" alt="ParkKeeper poster"></div>
+        <div class="slide"><img src="images/park_keeper_1.png" alt="ParkKeeper gameplay 1"></div>
+        <div class="slide"><img src="images/park_keeper_2.png" alt="ParkKeeper gameplay 2"></div>
+        <div class="slide"><img src="images/park_keeper_3.png" alt="ParkKeeper gameplay 3"></div>
+        <div class="slide"><img src="images/park_keeper_4.png" alt="ParkKeeper gameplay 4"></div>
+        <div class="slide slide-video">
+          <iframe src="" data-src="https://www.youtube.com/embed/sICdOBREv_E" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+        </div>
+        <button class="slider-btn prev" onclick="slideCard(this,-1)">&#8249;</button>
+        <button class="slider-btn next" onclick="slideCard(this,1)">&#8250;</button>
+        <div class="slider-dots"></div>
+      </div>
+      <div class="game-info">
+        <div class="game-genre">Simulation · 2025</div>
+        <div class="game-name">ParkKeeper</div>
+        <p class="game-desc">Your job is to keep the park clean and safe for the visitors with increasing difficulty with each day.</p>
+        <div class="contrib-block">
+          <div class="contrib-label">My Contributions</div>
+          <p class="contrib-text">Created the assets shown.</p>
+          <p class="contrib-text">Programmed the core gameplay mechanics.</p>
+        </div>
+        <div class="game-footer">
+          <div class="game-tags"><span class="tag">Unity</span><span class="tag">Solo</span></div>
+        </div>
+      </div>
+    </div>
 
-        function showMedia() {
-            const img = document.getElementById('lightbox-img');
-            const video = document.getElementById('lightbox-video');
+    <!-- ══ RAKAZON CONVERGENCE ══ (no poster, 1 shot + video) -->
+    <div class="game-card">
+      <div class="game-slider" data-index="0">
+        <div class="slide active"><img src="images/rakazon_1.png" alt="Rakazon Convergence gameplay 1"></div>
+        <div class="slide slide-video">
+          <iframe src="" data-src="https://www.youtube.com/embed/aQvh89JarUA" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+        </div>
+        <button class="slider-btn prev" onclick="slideCard(this,-1)">&#8249;</button>
+        <button class="slider-btn next" onclick="slideCard(this,1)">&#8250;</button>
+        <div class="slider-dots"></div>
+      </div>
+      <div class="game-info">
+        <div class="game-genre">Gacha Game · Mobile · 2026</div>
+        <div class="game-name">Rakazon Convergence</div>
+        <p class="game-desc">A turn-based Gacha Game where you fight enemies from different dimensions.</p>
+        <div class="contrib-block">
+          <div class="contrib-label">My Contributions</div>
+          <p class="contrib-text">Created the online backend of the game.</p>
+          <p class="contrib-text">Created a microservice for handling game logic.</p>
+          <p class="contrib-text">Created a Heroes system, Equipment, Quests, Custom Events, Stages, Battle System.</p>
+        </div>
+        <div class="game-footer">
+          <div class="game-tags"><span class="tag">Unity</span><span class="tag">Team</span></div>
+        </div>
+      </div>
+    </div>
 
-            img.style.display = 'none';
-            video.style.display = 'none';
-            video.pause();
+    <!-- ══ SALDANG ══ (poster + 4 shots + video) -->
+    <div class="game-card">
+      <div class="game-slider" data-index="0">
+        <div class="slide active"><img src="Poster/saldang_poster.png" alt="Saldang poster"></div>
+        <div class="slide"><img src="images/saldang_1.png" alt="Saldang gameplay 1"></div>
+        <div class="slide"><img src="images/saldang_2.png" alt="Saldang gameplay 2"></div>
+        <div class="slide"><img src="images/saldang_3.png" alt="Saldang gameplay 3"></div>
+        <div class="slide"><img src="images/saldang_4.png" alt="Saldang gameplay 4"></div>
+        <div class="slide slide-video">
+          <iframe src="" data-src="https://www.youtube.com/embed/EnDyvX0bAXQ" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+        </div>
+        <button class="slider-btn prev" onclick="slideCard(this,-1)">&#8249;</button>
+        <button class="slider-btn next" onclick="slideCard(this,1)">&#8250;</button>
+        <div class="slider-dots"></div>
+      </div>
+      <div class="game-info">
+        <div class="game-genre">Bullet Hell · 2025</div>
+        <div class="game-name">Saldang</div>
+        <p class="game-desc">A unique take on the Vampire Survivor-like genre with a light mechanism to increase and decrease difficulty.</p>
+        <div class="contrib-block">
+          <div class="contrib-label">My Contributions</div>
+          <p class="contrib-text">Programmed the core gameplay mechanics.</p>
+          <p class="contrib-text">Programmed a randomized reward system.</p>
+        </div>
+        <div class="game-footer">
+          <div class="game-tags"><span class="tag">Unity</span><span class="tag">Team</span></div>
+        </div>
+      </div>
+    </div>
 
-            const src = gallery[currentIndex];
+    <!-- ══ SORT IT OUT ══ (poster + 5 shots + video) -->
+    <div class="game-card">
+      <div class="game-slider" data-index="0">
+        <div class="slide active"><img src="Poster/sort_it_out_poster.png" alt="Sort It Out poster"></div>
+        <div class="slide"><img src="images/sort_it_out_1.png" alt="Sort It Out gameplay 1"></div>
+        <div class="slide"><img src="images/sort_it_out_2.png" alt="Sort It Out gameplay 2"></div>
+        <div class="slide"><img src="images/sort_it_out_3.png" alt="Sort It Out gameplay 3"></div>
+        <div class="slide"><img src="images/sort_it_out_4.png" alt="Sort It Out gameplay 4"></div>
+        <div class="slide"><img src="images/sort_it_out_5.png" alt="Sort It Out gameplay 5"></div>
+        <div class="slide slide-video">
+          <iframe src="" data-src="https://www.youtube.com/embed/RjmF7LPa5Uo" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+        </div>
+        <button class="slider-btn prev" onclick="slideCard(this,-1)">&#8249;</button>
+        <button class="slider-btn next" onclick="slideCard(this,1)">&#8250;</button>
+        <div class="slider-dots"></div>
+      </div>
+      <div class="game-info">
+        <div class="game-genre">Adventure · 2025</div>
+        <div class="game-name">Sort It Out</div>
+        <p class="game-desc">Our Capstone project about the consequences of improper waste disposal. You follow Nylo to prevent flooding in the sewers.</p>
+        <div class="contrib-block">
+          <div class="contrib-label">My Contributions</div>
+          <p class="contrib-text">Programmed the core gameplay mechanics.</p>
+          <p class="contrib-text">Programmed a roguelike saving mechanic.</p>
+          <p class="contrib-text">Programmed a randomized room generation system.</p>
+        </div>
+        <div class="game-footer">
+          <div class="game-tags"><span class="tag">Unity</span><span class="tag">Team</span></div>
+        </div>
+      </div>
+    </div>
 
-            if (src.endsWith('.mp4')) {
-                video.src = src;
-                video.style.display = 'block';
-                video.play();
-            } else {
-                img.src = src;
-                img.style.display = 'block';
-            }
-        }
+    <!-- ══ SPACE DEFENSE ══ (no poster, 3 shots + video) -->
+    <div class="game-card">
+      <div class="game-slider" data-index="0">
+        <div class="slide active"><img src="images/space_defense_1.png" alt="Space Defense gameplay 1"></div>
+        <div class="slide"><img src="images/space_defense_2.png" alt="Space Defense gameplay 2"></div>
+        <div class="slide"><img src="images/space_defense_3.png" alt="Space Defense gameplay 3"></div>
+        <div class="slide slide-video">
+          <iframe src="" data-src="https://www.youtube.com/embed/0z27CtsHjbw" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+        </div>
+        <button class="slider-btn prev" onclick="slideCard(this,-1)">&#8249;</button>
+        <button class="slider-btn next" onclick="slideCard(this,1)">&#8250;</button>
+        <div class="slider-dots"></div>
+      </div>
+      <div class="game-info">
+        <div class="game-genre">Arcade · 2023</div>
+        <div class="game-name">Space Defense</div>
+        <p class="game-desc">A casual game where you prevent falling asteroids from destroying the planet.</p>
+        <div class="contrib-block">
+          <div class="contrib-label">My Contributions</div>
+          <p class="contrib-text">Programmed the core gameplay mechanics.</p>
+        </div>
+        <div class="game-footer">
+          <div class="game-tags"><span class="tag">Unity</span><span class="tag">Solo</span></div>
+        </div>
+      </div>
+    </div>
 
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeLightbox();
-        });
-    </script>
+    <!-- ══ TANK SURVIVOR ══ (no poster, 3 shots + video) -->
+    <div class="game-card">
+      <div class="game-slider" data-index="0">
+        <div class="slide active"><img src="images/tank_survivor_1.png" alt="Tank Survivor gameplay 1"></div>
+        <div class="slide"><img src="images/tank_survivor_2.png" alt="Tank Survivor gameplay 2"></div>
+        <div class="slide"><img src="images/tank_survivor_3.png" alt="Tank Survivor gameplay 3"></div>
+        <div class="slide slide-video">
+          <iframe src="" data-src="https://www.youtube.com/embed/lyvgj4UZAa8" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+        </div>
+        <button class="slider-btn prev" onclick="slideCard(this,-1)">&#8249;</button>
+        <button class="slider-btn next" onclick="slideCard(this,1)">&#8250;</button>
+        <div class="slider-dots"></div>
+      </div>
+      <div class="game-info">
+        <div class="game-genre">Action · Shooter · 2024</div>
+        <div class="game-name">Tank Survivor</div>
+        <p class="game-desc">A survival game where you fight off waves of enemies and bosses to get the highest score.</p>
+        <div class="contrib-block">
+          <div class="contrib-label">My Contributions</div>
+          <p class="contrib-text">Programmed the core gameplay mechanics.</p>
+          <p class="contrib-text">Programmed a simple AI on the enemies.</p>
+        </div>
+        <div class="game-footer">
+          <div class="game-tags"><span class="tag">Unity</span><span class="tag">Solo</span></div>
+        </div>
+      </div>
+    </div>
 
+  </div>
+</section>
+
+<!-- ── LIGHTBOX ── -->
+<div id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" src="" alt="Gameplay screenshot">
+</div>
+
+<hr class="divider" />
+
+<!-- ── ACHIEVEMENTS ── -->
+<section id="achievements">
+  <p class="section-label">Achievements</p>
+  <h2>Highlights</h2>
+  <div class="ach-list">
+    <div class="ach-item">
+      <div class="ach-emoji">🏆</div>
+      <div class="ach-text">
+        <div class="ach-title">Top 19 Semi-Finalist on Young Creatives Challenge Season 2</div>
+        <div class="ach-detail">Our game "Kupido" was selected as a semi-finalist</div>
+      </div>
+      <div class="ach-year">2024</div>
+    </div>
+    <div class="ach-item">
+      <div class="ach-emoji">🥇</div>
+      <div class="ach-text">
+        <div class="ach-title">Top 2 on Bicol Myth Game Jam hosted by Bicol University</div>
+        <div class="ach-detail">We got 2nd place in the Bicol Myth Game Jam.</div>
+      </div>
+      <div class="ach-year">2025</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<div id="contact">
+  <div>
+    <h2>Let's work together.</h2>
+    <p>Open to collabs, jam teams, and freelance projects.</p>
+  </div>
+  <div class="contact-btns">
+    <a href="mailto:ivantesorero0@gmail.com" class="cbtn fill">Email Me</a>
+    <a href="https://yourusername.itch.io" class="cbtn ghost" target="_blank" rel="noopener">itch.io ↗</a>
+    <a href="https://github.com/yourusername" class="cbtn ghost" target="_blank" rel="noopener">GitHub ↗</a>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <span>© 2025 Ivan Tesorero</span>
+  <span>Naga City, Philippines</span>
+</footer>
+
+<script src="script.js"></script>
 </body>
-
 </html>
