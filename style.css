@@ -184,7 +184,7 @@ h2 {
   font-size: 0.95rem;
 }
 
-/* About info row — location, email, CV */
+/* About info row — location, email, phone */
 .about-info-row {
   display: flex;
   flex-wrap: wrap;
@@ -282,7 +282,6 @@ h2 {
   fill: none;
 }
 
-/* Real photo class — add this to your <img> tag */
 .about-photo-img {
   width: 100%;
   max-height: 420px;
@@ -290,6 +289,16 @@ h2 {
   display: block;
   object-fit: cover;
   object-position: top;
+}
+
+/* Name under photo */
+.about-photo-name {
+  text-align: center;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-top: 0.6rem;
+  color: var(--ink);
 }
 
 /* ── GAME SLIDER ── */
@@ -689,8 +698,12 @@ footer {
     gap: 2.5rem;
   }
 
+  /* Photo goes above the text on mobile */
   .about-photo-wrap {
+    order: -1;
     max-width: 220px;
+    margin: 0 auto;
+    text-align: center;
   }
 
   .about-photo-placeholder {
