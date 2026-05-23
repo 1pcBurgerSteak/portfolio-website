@@ -13,6 +13,8 @@
 html { scroll-behavior: smooth; }
 
 body {
+  max-width: 1280px;
+  margin: 0 auto;
   background: var(--bg);
   color: var(--ink);
   font-family: 'DM Sans', sans-serif;
@@ -173,14 +175,14 @@ h2 {
 /* ── ABOUT ── */
 #about {
   display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 4rem;
-  align-items: start;
+  grid-template-columns: auto 1fr;
+  gap: 3rem;
+  align-items: center;
 }
 
-/* Text on the left, photo on the right */
-.about-text { grid-column: 1; grid-row: 1; }
-.about-photo-wrap { grid-column: 2; grid-row: 1; }
+/* Photo on the left, text on the right */
+.about-photo-wrap { grid-column: 1; grid-row: 1; }
+.about-text { grid-column: 2; grid-row: 1; }
 
 .about-text p {
   color: var(--muted);
@@ -287,9 +289,9 @@ h2 {
 }
 
 .about-photo-img {
-  width: 250px;              /* smaller, sensible portrait on PC */
+  width: 260px;              /* sensible square on PC */
   max-width: 100%;
-  aspect-ratio: 1;       /* consistent portrait shape */
+  aspect-ratio: 1 / 1;       /* square */
   border-radius: 12px;
   display: block;
   object-fit: cover;
