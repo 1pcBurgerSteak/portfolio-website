@@ -173,10 +173,14 @@ h2 {
 /* ── ABOUT ── */
 #about {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr auto;
   gap: 4rem;
   align-items: start;
 }
+
+/* Text on the left, photo on the right */
+.about-text { grid-column: 1; grid-row: 1; }
+.about-photo-wrap { grid-column: 2; grid-row: 1; }
 
 .about-text p {
   color: var(--muted);
@@ -283,12 +287,18 @@ h2 {
 }
 
 .about-photo-img {
-  width: 100%;
-  max-height: 420px;
+  width: 250px;              /* smaller, sensible portrait on PC */
+  max-width: 100%;
+  aspect-ratio: 1;       /* consistent portrait shape */
   border-radius: 12px;
   display: block;
   object-fit: cover;
   object-position: top;
+}
+
+.about-photo-wrap {
+  width: 260px;              /* matches photo */
+  max-width: 100%;
 }
 
 /* Name under photo */
@@ -698,12 +708,24 @@ footer {
     gap: 2.5rem;
   }
 
+  /* Reset desktop grid placement; stack in one column */
+  .about-text,
+  .about-photo-wrap {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
   /* Photo goes above the text on mobile */
   .about-photo-wrap {
     order: -1;
+    width: 220px;
     max-width: 220px;
     margin: 0 auto;
     text-align: center;
+  }
+
+  .about-photo-img {
+    max-width: 220px;
   }
 
   .about-photo-placeholder {
