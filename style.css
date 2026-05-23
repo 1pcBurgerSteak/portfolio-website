@@ -742,6 +742,22 @@ footer {
   }
 }
 
+/* Plain-text email line (replaces the Email Me button) */
+.contact-email {
+  font-size: 0.95rem;
+  color: rgba(245, 242, 238, 0.7);
+}
+
+.contact-email a {
+  color: var(--accent);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.2s;
+}
+
+.contact-email a:hover { opacity: 0.8; }
+
 /* Mobile */
 @media (max-width: 600px) {
   /* Nav */
