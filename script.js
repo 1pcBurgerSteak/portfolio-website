@@ -22,7 +22,6 @@ function initSliders() {
     const slides = slider.querySelectorAll('.slide');
     const dotsEl = slider.querySelector('.slider-dots');
 
-    // Build dots
     slides.forEach((_, i) => {
       const dot = document.createElement('div');
       dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
@@ -37,38 +36,38 @@ function goToSlide(slider, index) {
   const dots   = slider.querySelectorAll('.slider-dot');
   const total  = slides.length;
 
-  // Pause/unload iframes when leaving video slide
-  const current = parseInt(slider.dataset.index);
+  // Stop video on current slide by removing the src entirely
+  const current = parseInt(slider.dataset.index) || 0;
   const currentSlide = slides[current];
-  if (currentSlide.classList.contains('slide-video')) {
+  if (currentSlide && currentSlide.classList.contains('slide-video')) {
     const iframe = currentSlide.querySelector('iframe');
-    iframe.src = ''; // stop video
+    if (iframe) iframe.removeAttribute('src'); // ← KEY FIX: remove, don't blank
   }
 
-  // Clamp index with wrap
+  // Wrap index
   index = ((index % total) + total) % total;
   slider.dataset.index = index;
 
   slides.forEach((s, i) => s.classList.toggle('active', i === index));
   dots.forEach((d, i)   => d.classList.toggle('active', i === index));
 
-  // Lazy-load iframe only when video slide is active
+  // Load YouTube only when arriving at the video slide
   const newSlide = slides[index];
-  if (newSlide.classList.contains('slide-video')) {
+  if (newSlide && newSlide.classList.contains('slide-video')) {
     const iframe = newSlide.querySelector('iframe');
-    if (!iframe.src || iframe.src === window.location.href) {
-      iframe.src = iframe.dataset.src;
+    if (iframe && iframe.dataset.src) {
+      iframe.src = iframe.dataset.src; // ← Always re-set from data-src
     }
   }
 }
 
 function slideCard(btn, dir) {
   const slider = btn.closest('.game-slider');
-  const current = parseInt(slider.dataset.index);
+  const current = parseInt(slider.dataset.index) || 0;
   goToSlide(slider, current + dir);
 }
 
-// ── LIGHTBOX (for image slides) ──
+// ── LIGHTBOX ──
 function openLightbox(src) {
   const lb = document.getElementById('lightbox');
   document.getElementById('lightbox-img').src = src;
@@ -83,10 +82,8 @@ function closeLightbox() {
 
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 
-// Click image slides to open lightbox
 document.querySelectorAll('.slide:not(.slide-video) img').forEach(img => {
   img.addEventListener('click', () => openLightbox(img.src));
 });
 
-// Init on load
 initSliders();
