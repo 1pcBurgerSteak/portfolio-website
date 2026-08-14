@@ -992,3 +992,219 @@ img:focus-visible {
     animation-duration: 0.01ms !important;
   }
 }
+
+/* ═══════════════════════════════
+   CARD → CASE STUDY LINK
+═══════════════════════════════ */
+.game-card { cursor: pointer; }
+
+.case-study-link {
+  font-weight: 700;
+  order: -1;
+}
+
+/* ═══════════════════════════════
+   GAME DETAIL PAGE (game.html)
+═══════════════════════════════ */
+.detail-hero {
+  padding: 3rem 5vw 0;
+  max-width: 900px;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-bottom: 2rem;
+  transition: color 0.2s;
+}
+
+.back-link:hover { color: var(--accent); }
+
+.detail-genre {
+  font-size: 0.72rem;
+  color: var(--accent);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+
+.detail-title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: clamp(2rem, 6vw, 3.4rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+}
+
+.detail-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 1.25rem 0;
+  margin-bottom: 2rem;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.detail-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.detail-stat .label {
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.detail-stat .value {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+
+.detail-media { padding: 0 5vw; margin-bottom: 2.5rem; }
+
+.detail-media .game-slider {
+  width: 100%;
+  min-width: 0;
+  max-width: 900px;
+  border-radius: 8px;
+  aspect-ratio: 16 / 9;
+}
+
+.detail-body {
+  padding: 0 5vw 1rem;
+  max-width: 780px;
+}
+
+.detail-section { margin-bottom: 2.75rem; }
+
+.detail-desc {
+  font-size: 1rem;
+  color: var(--ink);
+  opacity: 0.82;
+  max-width: 68ch;
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+}
+
+.detail-cta { margin-top: 0.25rem; }
+
+.detail-contrib-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.detail-contrib-list li {
+  position: relative;
+  padding-left: 1.35rem;
+  font-size: 0.95rem;
+  color: var(--ink);
+  opacity: 0.82;
+  line-height: 1.65;
+}
+
+.detail-contrib-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.deepdive-block { margin-bottom: 1.75rem; }
+.deepdive-block:last-child { margin-bottom: 0; }
+
+.deepdive-block h3 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 0.6rem;
+  color: var(--ink);
+}
+
+.deepdive-block p {
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.75;
+  margin-bottom: 0.85rem;
+}
+
+.deepdive-block p:last-child { margin-bottom: 0; }
+
+.learnings-block {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-left: 2px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  padding: 1.25rem 1.5rem;
+}
+
+.learnings-block p {
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.75;
+  margin-bottom: 0.75rem;
+}
+
+.learnings-block p:last-child { margin-bottom: 0; }
+
+.detail-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 2rem 5vw 3rem;
+  border-top: 1px solid var(--border);
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.detail-nav a {
+  font-size: 0.85rem;
+  color: var(--muted);
+  max-width: 46%;
+  transition: color 0.2s;
+}
+
+.detail-nav a:hover { color: var(--accent); }
+.detail-nav .next-link { margin-left: auto; text-align: right; }
+
+.not-found {
+  padding: 6rem 5vw;
+  text-align: center;
+}
+
+.not-found h1 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 2rem;
+  margin: 0.5rem 0 1rem;
+}
+
+.not-found p { color: var(--muted); }
+
+.not-found a {
+  color: var(--accent);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+  .detail-nav { flex-direction: column; gap: 0.75rem; }
+  .detail-nav a { max-width: 100%; text-align: left; }
+  .detail-nav .next-link { text-align: left; }
+  .detail-media .game-slider { border-radius: 4px; }
+}

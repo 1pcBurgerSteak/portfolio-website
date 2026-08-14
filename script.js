@@ -345,5 +345,22 @@ document
   });
 
 
+// ── CARD → CASE STUDY NAVIGATION ──
+// Clicking anywhere on a game card opens its full case-study page,
+// EXCEPT when the click lands on something already interactive
+// (the slider, its arrows/dots, an image, or a link/button) —
+// those keep doing what they already do.
+document.querySelectorAll('.game-card[data-slug]').forEach(card => {
+  card.addEventListener('click', e => {
+    if (e.target.closest('a, button, .game-slider')) return;
+
+    const slug = card.dataset.slug;
+    if (slug) {
+      window.location.href = `game.html?slug=${encodeURIComponent(slug)}`;
+    }
+  });
+});
+
+
 // ── INITIALIZE ──
 initSliders();

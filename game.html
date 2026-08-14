@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game — Ivan Tesorero</title>
+  <link rel="stylesheet" href="./style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <div class="logo"><a href="index.html">Ivan Tesorero</a></div>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-right" id="nav-right">
+    <a href="index.html#about">About</a>
+    <a href="index.html#games">Games</a>
+    <a href="index.html#achievements">Awards</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- ── CASE STUDY CONTENT (rendered by detail.js from games-data.js) ── -->
+<main id="game-detail-root">
+  <!-- filled in on load -->
+</main>
+
+<!-- ── PREV / NEXT GAME ── -->
+<nav class="detail-nav" id="detail-prev-next"></nav>
+
+<!-- ── LIGHTBOX (shared with index.html's screenshot slider) ── -->
+<div id="lightbox" aria-hidden="true">
+  <button type="button" class="lightbox-close" onclick="closeLightbox()" aria-label="Close">&times;</button>
+  <button type="button" class="lightbox-btn prev" onclick="lightboxMove(-1)" aria-label="Previous image">&#8249;</button>
+  <button type="button" class="lightbox-btn next" onclick="lightboxMove(1)" aria-label="Next image">&#8250;</button>
+  <div class="lightbox-content">
+    <img id="lightbox-img" src="" alt="Gameplay screenshot">
+    <p id="lightbox-caption"></p>
+  </div>
+  <p class="lightbox-help">&larr; &rarr; to navigate &middot; Esc to close</p>
+</div>
+
+<!-- ── CONTACT ── -->
+<div id="contact">
+  <div>
+    <h2>Let's work together.</h2>
+    <p>Open to collabs, jam teams, and freelance projects.</p>
+  </div>
+  <div class="contact-btns">
+    <p class="contact-email">Email me at <a href="mailto:ivantesorero0@gmail.com">ivantesorero0@gmail.com</a></p>
+  </div>
+</div>
+
+<script src="./games-data.js"></script>
+<script src="./detail.js"></script>
+<script src="./script.js"></script>
+</body>
+</html>
