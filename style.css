@@ -154,7 +154,7 @@ h1 em { font-style: normal; color: var(--accent); }
   margin: 0 5vw;
 }
 
-section { padding: 4rem 5vw; }
+section { padding: 2rem 5vw; }
 
 .section-label {
   font-size: 0.68rem;
@@ -1080,8 +1080,8 @@ img:focus-visible {
 }
 
 .detail-body {
-  padding: 0 5vw 1rem;
-  max-width: 780px;
+  /* padding: 0 5vw 1rem; */
+  max-width: 900px;
 }
 
 .detail-section { margin-bottom: 2.75rem; }
